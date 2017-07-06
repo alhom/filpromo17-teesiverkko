@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+	# -*- coding: utf-8 -*-
 from os import system
 from functions import *
 
@@ -17,14 +17,25 @@ kayttis = 'hdl_10138_18094'
 
 
 # List the records with the given key
-gradut = getGradus(matlu_gradut_1)
+reharvest = True
+if reharvest:
+	print 'Harvesting theses'
+	gradut = getGradus(matlu_gradut_1)
+else:
+	print 'Loading theses'
+	gradut = loadTheses()
+
 
 for gradu in gradut:
     #print(gradu.author+':\t\t'+gradu.title)
-    if 'Alho' in gradu.author or 'Saressalo' in gradu.author:
+    #:print gradu.title
+    #print gradu.abstract
+    if False:#'Alho' in gradu.author: #or 'Saressalo' in gradu.author:
+	print gradu.link
         pdfname = downloadpdf(gradu.link)
+	print pdfname
         countWords(gradu,pdfname)
         print gradu
         print 'Keywords:'
         print gradu.keywords
-        system('rm '+pdfname[:-3]+'*')
+        #system('rm '+pdfname[:-3]+'*')

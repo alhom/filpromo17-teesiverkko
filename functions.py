@@ -1,7 +1,9 @@
-# -*- coding: UTF-8 -*-
+	# -*- coding: UTF-8 -*-
 from os import system
 import lxml.html, urllib2, urlparse
 from sickle import Sickle
+import time
+import pickle
 
 class Thesis(object):
     def __repr__(self):
@@ -42,6 +44,15 @@ class Thesis(object):
     figurecount = 0
     pagecount = 0
 
+def dumpTheses(gradut):
+	with open('thesisdump.pkl','wb') as output:
+        	pickle.dump(gradut, output, pickle.HIGHEST_PROTOCOL)
+def loadTheses():
+        with open('thesisdump.pkl','rb') as inp:
+                gradut = pickle.load(inp)
+        print 'Loaded %d theses' % len(gradut)
+	return gradut
+
 def downloadpdf(url):
     # A function to download a pdf file from a link to http://ethesis.helsinki.fi/
     res = urllib2.urlopen(url)
@@ -62,7 +73,7 @@ def downloadpdf(url):
     # the file is now saved on the computer, return the filename (=> path?)
     return pdfname
 
-def getGradus(setname,fromdate='2014-05-23'):
+def getGradus(setname,fromdate='2016-09-14'):
 
     # A function for reading the thesis entries from the database
     # fromdate as yyyy-mm-dd
@@ -73,10 +84,22 @@ def getGradus(setname,fromdate='2014-05-23'):
     while n > 0:
         gradulist,n = recordharvester(command)
         gradut += gradulist
+	print '%d records harvested, sleep a second' % n
         
     print('Found '+str(len(gradut))+' theses')
+    dumpTheses(gradut)
     return gradut
 
+#cases for entry strings: 
+# ['str']
+# [u'str'] (with string containing special characters (unicode flag?)
+# ["str"] (with string containing ')
+def purify(string):
+	start = 2
+	if string.startswith('[u'):
+		start = 3
+	str = string[start:-2]
+	return str
 
 def recordharvester(records):
     # A function to read the metadatas obtained from ethesis and save them into Thesis objects 
@@ -86,17 +109,20 @@ def recordharvester(records):
         # Look for the next thesis until there are no more
         try: metadata = records.next().metadata
         except: break
-        
+
         n += 1
         thisthesis = Thesis() # new Thesis object
         
         # Try to find each metadata type, not all theses have all of these
-        try: thisthesis.title = str(metadata['title'])[2:-2]
+        try: thisthesis.title = purify(str(metadata['title']))
         except: pass
-        try: thisthesis.author = str(metadata['creator'])[2:-2]
+
+        try: thisthesis.author = purify(str(metadata['creator']))
         except: pass
-        try: thisthesis.abstract = str(metadata['description'])[2:-2]
+
+        try: thisthesis.abstract = purify(str(metadata['description']))
         except: pass
+
         try: thisthesis.language = str(metadata['language'])[2:-2]
         except: pass
         try: thisthesis.date = str(metadata['date'])[2:-2]
@@ -104,18 +130,20 @@ def recordharvester(records):
         # Link to the ethesis page
         try: thisthesis.link = str(metadata['identifier'])[2:-2]
         except: pass
-        try: thisthesis.subject = str(metadata['subject'])[2:-2]
+        try: thisthesis.subject = str(metadata['subject'])[1:-1]
         except: pass
         # Master's or Doctoral
-        try: thisthesis.thesistype = str(metadata['type'])[2:-2]
+        try: thisthesis.thesistype = purify(str(metadata['type']))
         except: pass
         # Faculty and department, omit the "University of Helsinki" in the beginning
-        try: thisthesis.unit = str(metadata['contributor'])[23:-2]
+        try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
         except: pass
         
         # Make sure that the link is correct
         thisthesis.link = thisthesis.link[thisthesis.link.find('http'):] 
         theses.append(thisthesis) # add the thesis to the theses array
+	print thisthesis
+	time.sleep(0.2)
     
     return theses,n
 
