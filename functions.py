@@ -73,18 +73,26 @@ def downloadpdf(url):
     # the file is now saved on the computer, return the filename (=> path?)
     return pdfname
 
-def getGradus(setname,fromdate='2016-09-14'):
+def getGradus(setname,fromdate='2014-09-14'):
 
     # A function for reading the thesis entries from the database
     # fromdate as yyyy-mm-dd
+    gradut = []
     sickle = Sickle('http://helda.helsinki.fi/oai/request')
-    command = sickle.ListRecords(**{'metadataPrefix': 'oai_dc','set': setname, 'from': fromdate})
-    gradut,n = recordharvester(command)
+    with open('iideet.txt','r') as f:
+        for line in f:
+            identifier = 'oai:helda.helsinki.fi:'+line.strip()
+            record = sickle.GetRecord(**{'metadataPrefix': 'oai_dc','identifier': identifier})
+            metadata = record.metadata
+            print metaharvester(metadata)
+            gradut.append(metaharvester(metadata))
+            #print(metadata['description'][0])
+            time.sleep(1)
     
-    while n > 0:
-        gradulist,n = recordharvester(command)
-        gradut += gradulist
-	print '%d records harvested, sleep a second' % n
+#    while n > 0:
+#        gradulist,n = recordharvester(command)
+#        gradut += gradulist
+#	print '%d records harvested, sleep a second' % n
         
     print('Found '+str(len(gradut))+' theses')
     dumpTheses(gradut)
@@ -146,6 +154,43 @@ def recordharvester(records):
 	time.sleep(0.2)
     
     return theses,n
+
+def metaharvester(metadata):
+    # A function to read the metadatas obtained from ethesis and save them into Thesis objects
+
+    thisthesis = Thesis() # new Thesis object
+
+    # Try to find each metadata type, not all theses have all of these
+    try: thisthesis.title = purify(str(metadata['title']))
+    except: pass
+
+    try: thisthesis.author = purify(str(metadata['creator']))
+    except: pass
+
+    try: thisthesis.abstract = purify(str(metadata['description']))
+    except: pass
+
+    try: thisthesis.language = str(metadata['language'])[2:-2]
+    except: pass
+    try: thisthesis.date = str(metadata['date'])[2:-2]
+    except: pass
+    # Link to the ethesis page
+    try: thisthesis.link = str(metadata['identifier'])[2:-2]
+    except: pass
+    try: thisthesis.subject = str(metadata['subject'])[1:-1]
+    except: pass
+    # Master's or Doctoral
+    try: thisthesis.thesistype = purify(str(metadata['type']))
+    except: pass
+    # Faculty and department, omit the "University of Helsinki" in the beginning
+    try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
+    except: pass
+
+    # Make sure that the link is correct
+    thisthesis.link = thisthesis.link[thisthesis.link.find('http'):]
+
+    return thisthesis
+
 
 def countWords(gradu,pdfname):
     # A function to count the number of words, characters and the most common words in a pdf

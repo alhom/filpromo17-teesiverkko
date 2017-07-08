@@ -1,0 +1,3 @@
+sudo apt install python-lxml
+pip install requests
+pip install sickle

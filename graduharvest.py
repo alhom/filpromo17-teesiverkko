@@ -17,7 +17,7 @@ kayttis = 'hdl_10138_18094'
 
 
 # List the records with the given key
-reharvest = True
+reharvest = False
 if reharvest:
 	print 'Harvesting theses'
 	gradut = getGradus(matlu_gradut_1)
@@ -28,7 +28,8 @@ else:
 
 for gradu in gradut:
     #print(gradu.author+':\t\t'+gradu.title)
-    #:print gradu.title
+    print gradu.unit
+    
     #print gradu.abstract
     if False:#'Alho' in gradu.author: #or 'Saressalo' in gradu.author:
 	print gradu.link
