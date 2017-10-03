@@ -2,7 +2,11 @@ MIT License (see LICENSE.md), (c) 2017 Markku Alho & Anton Saressalo
 
 If you happen meet the authors of the Teesiverkko project some day, feel free to buy us some sparkling wine, if you think this stuff is worth it.
 
+--------------
+
 Verkkopohjaista visualisointia opinnäytteistä - Graph-based visualization of dissertations and Master's theses
+
+--------------
 
 There are two main components here:
 1) The python harvester & data miner for HELDA OAI database, used to extract metadata and mine entire theses, where available.
