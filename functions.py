@@ -1,6 +1,6 @@
 	# -*- coding: UTF-8 -*-
 from os import system
-import lxml.html, urllib2, urlparse
+import urllib2, urlparse
 from sickle import Sickle
 import time
 import pickle
@@ -48,10 +48,10 @@ def dumpTheses(gradut):
 	with open('thesisdump.pkl','wb') as output:
         	pickle.dump(gradut, output, pickle.HIGHEST_PROTOCOL)
 def loadTheses():
-        with open('thesisdump.pkl','rb') as inp:
-                gradut = pickle.load(inp)
-        print 'Loaded %d theses' % len(gradut)
-	return gradut
+   with open('thesisdump.pkl','rb') as inp:
+            gradut = pickle.load(inp)
+   print('Loaded %d theses' % len(gradut))
+   return gradut
 
 def downloadpdf(url):
     # A function to download a pdf file from a link to http://ethesis.helsinki.fi/
@@ -84,7 +84,7 @@ def getGradus(setname,fromdate='2014-09-14'):
             identifier = 'oai:helda.helsinki.fi:'+line.strip()
             record = sickle.GetRecord(**{'metadataPrefix': 'oai_dc','identifier': identifier})
             metadata = record.metadata
-            print metaharvester(metadata)
+            print(metaharvester(metadata))
             gradut.append(metaharvester(metadata))
             #print(metadata['description'][0])
             time.sleep(1)
@@ -110,50 +110,50 @@ def purify(string):
 	return str
 
 def recordharvester(records):
-    # A function to read the metadatas obtained from ethesis and save them into Thesis objects 
-    theses = []
-    n = 0
-    while True:
-        # Look for the next thesis until there are no more
-        try: metadata = records.next().metadata
-        except: break
+   # A function to read the metadatas obtained from ethesis and save them into Thesis objects 
+   theses = []
+   n = 0
+   while True:
+      # Look for the next thesis until there are no more
+      try: metadata = records.next().metadata
+      except: break
 
-        n += 1
-        thisthesis = Thesis() # new Thesis object
-        
-        # Try to find each metadata type, not all theses have all of these
-        try: thisthesis.title = purify(str(metadata['title']))
-        except: pass
+      n += 1
+      thisthesis = Thesis() # new Thesis object
+      
+      # Try to find each metadata type, not all theses have all of these
+      try: thisthesis.title = purify(str(metadata['title']))
+      except: pass
 
-        try: thisthesis.author = purify(str(metadata['creator']))
-        except: pass
+      try: thisthesis.author = purify(str(metadata['creator']))
+      except: pass
 
-        try: thisthesis.abstract = purify(str(metadata['description']))
-        except: pass
+      try: thisthesis.abstract = purify(str(metadata['description']))
+      except: pass
 
-        try: thisthesis.language = str(metadata['language'])[2:-2]
-        except: pass
-        try: thisthesis.date = str(metadata['date'])[2:-2]
-        except: pass
-        # Link to the ethesis page
-        try: thisthesis.link = str(metadata['identifier'])[2:-2]
-        except: pass
-        try: thisthesis.subject = str(metadata['subject'])[1:-1]
-        except: pass
-        # Master's or Doctoral
-        try: thisthesis.thesistype = purify(str(metadata['type']))
-        except: pass
-        # Faculty and department, omit the "University of Helsinki" in the beginning
-        try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
-        except: pass
-        
-        # Make sure that the link is correct
-        thisthesis.link = thisthesis.link[thisthesis.link.find('http'):] 
-        theses.append(thisthesis) # add the thesis to the theses array
-	print thisthesis
-	time.sleep(0.2)
+      try: thisthesis.language = str(metadata['language'])[2:-2]
+      except: pass
+      try: thisthesis.date = str(metadata['date'])[2:-2]
+      except: pass
+      # Link to the ethesis page
+      try: thisthesis.link = str(metadata['identifier'])[2:-2]
+      except: pass
+      try: thisthesis.subject = str(metadata['subject'])[1:-1]
+      except: pass
+      # Master's or Doctoral
+      try: thisthesis.thesistype = purify(str(metadata['type']))
+      except: pass
+      # Faculty and department, omit the "University of Helsinki" in the beginning
+      try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
+      except: pass
+      
+      # Make sure that the link is correct
+      thisthesis.link = thisthesis.link[thisthesis.link.find('http'):] 
+      theses.append(thisthesis) # add the thesis to the theses array
+      print(thisthesis)
+      time.sleep(0.2)
     
-    return theses,n
+   return theses,n
 
 def metaharvester(metadata):
     # A function to read the metadatas obtained from ethesis and save them into Thesis objects
@@ -284,7 +284,7 @@ def stripcommon(wordlist):
     wordfile = open('wordlist_en.txt','r')
     commonwords = wordfile.readlines()
     commonwords = [word.strip() for word in commonwords]
-    print wordlist.index('the')
+    print(wordlist.index('the'))
     strippedlist = wordlist
     for word in wordlist:
         if word in commonwords:
