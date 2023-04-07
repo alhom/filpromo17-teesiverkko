@@ -1,48 +1,56 @@
 	# -*- coding: UTF-8 -*-
 from os import system
-import urllib2, urlparse
+import lxml, urllib3 as urllib2
 from sickle import Sickle
 import time
 import pickle
+import ftfy
+import langdetect
 
 class Thesis(object):
     def __repr__(self):
         return "Thesis()"
     def __str__(self):
 		# Function for printing the data of the thesis
-        string = self.thesistype+':\n'
-        if self.title: string += 'Title:\t\t'+self.title+'\n'
-        if self.author: string += 'Author:\t\t'+self.author+'\n'
-        if self.unit: string += 'Unit:\t\t'+self.unit+'\n'
-        if self.subject: string += 'Subject:\t'+self.subject+'\n'
-        if self.language: string += 'Language:\t'+self.language+'\n'
-        if self.date: string += 'Date:\t\t'+self.date+'\n'
-        if self.link: string += 'Link:\t\t'+self.link+'\n'
-        #if self.keywords: string += 'Keywords:\t'+self.keywords+'\n'
-        if self.wordcount: string += 'Word count:\t'+str(self.wordcount)+'\n'
-        if self.charcount: string += 'Char count:\t'+str(self.charcount)+'\n'
-        if self.figurecount: string += 'Figure count:\t\t'+str(self.figurecount)+'\n'
-        if self.pagecount: string += 'Page count:\t\t'+str(self.pagecount)+'\n'
+         string = self.thesistype+':\n'
+         if self.title: string += 'Title:\t\t'+self.title+'\n'
+         if self.author: string += 'Author:\t\t'+self.author+'\n'
+         if self.unit: string += 'Unit:\t\t'+self.unit+'\n'
+         if self.subject: string += 'Subject:\t'+self.subject+'\n'
+         if self.language: string += 'Language:\t'+self.language+'\n'
+         if self.date: string += 'Date:\t\t'+self.date+'\n'
+         if self.link: string += 'Link:\t\t'+self.link+'\n'
+         if self.abstracts: string += 'Abs.languages:\t\t'+str(list(self.abstracts.keys()))+'\n'
+         #if self.keywords: string += 'Keywords:\t'+self.keywords+'\n'
+         if self.wordcount: string += 'Word count:\t'+str(self.wordcount)+'\n'
+         if self.charcount: string += 'Char count:\t'+str(self.charcount)+'\n'
+         if self.figurecount: string += 'Figure count:\t\t'+str(self.figurecount)+'\n'
+         if self.pagecount: string += 'Page count:\t\t'+str(self.pagecount)+'\n'
 
 
-        return string
+         return string
     
-    # Initializing the values
-    author = ''
-    title = ''
-    abstract = ''
-    language = ''
-    unit = ''
-    date = ''
-    link = ''
-    subject = ''
-    thesistype = ''
-    keywords = []
-    commonwords = []
-    wordcount = 0
-    charcount = 0
-    figurecount = 0
-    pagecount = 0
+    def __init__(self, metadata=None):
+      # Initializing the values
+      self.author = ''
+      self.title = ''
+      self.abstract = ''
+      self.abstracts = {}
+      self.language = ''
+      self.unit = ''
+      self.date = ''
+      self.link = ''
+      self.subject = ''
+      self.thesistype = ''
+      self.keywords = []
+      self.commonwords = []
+      self.wordcount = 0
+      self.charcount = 0
+      self.figurecount = 0
+      self.pagecount = 0
+      if metadata is not None:
+          metaharvester(metadata, thesis=self)
+
 
 def dumpTheses(gradut):
 	with open('thesisdump.pkl','wb') as output:
@@ -51,7 +59,9 @@ def loadTheses():
    with open('thesisdump.pkl','rb') as inp:
             gradut = pickle.load(inp)
    print('Loaded %d theses' % len(gradut))
-   return gradut
+   print("Reprocessings")
+   gradut_again = [metaharvester(g.metadata) for g in gradut]
+   return gradut_again
 
 def downloadpdf(url):
     # A function to download a pdf file from a link to http://ethesis.helsinki.fi/
@@ -73,21 +83,29 @@ def downloadpdf(url):
     # the file is now saved on the computer, return the filename (=> path?)
     return pdfname
 
-def getGradus(setname,fromdate='2014-09-14'):
+def getGradus(setname,fromdate='2014-09-14', max = 3):
 
     # A function for reading the thesis entries from the database
     # fromdate as yyyy-mm-dd
     gradut = []
     sickle = Sickle('http://helda.helsinki.fi/oai/request')
     with open('iideet.txt','r') as f:
+        i = 0
         for line in f:
             identifier = 'oai:helda.helsinki.fi:'+line.strip()
             record = sickle.GetRecord(**{'metadataPrefix': 'oai_dc','identifier': identifier})
-            metadata = record.metadata
-            print(metaharvester(metadata))
+            try:
+               metadata = record.get_metadata()
+            except:
+               print("No metadata for", line.strip(), "skipping record",record)
+               continue
+
             gradut.append(metaharvester(metadata))
             #print(metadata['description'][0])
             time.sleep(1)
+            i = i+1
+            if i >= max:
+                break
     
 #    while n > 0:
 #        gradulist,n = recordharvester(command)
@@ -103,62 +121,70 @@ def getGradus(setname,fromdate='2014-09-14'):
 # [u'str'] (with string containing special characters (unicode flag?)
 # ["str"] (with string containing ')
 def purify(string):
-	start = 2
-	if string.startswith('[u'):
-		start = 3
-	str = string[start:-2]
-	return str
+   start = 2
+   if string.startswith('[u'):
+      start = 3
+   stri = string[start:-2]
+   #stri = ftfy.fix(stri)
+   return stri
 
-def recordharvester(records):
-   # A function to read the metadatas obtained from ethesis and save them into Thesis objects 
-   theses = []
-   n = 0
-   while True:
-      # Look for the next thesis until there are no more
-      try: metadata = records.next().metadata
-      except: break
+# def recordharvester(records):
+#    # A function to read the metadatas obtained from ethesis and save them into Thesis objects 
+#    theses = []
+#    n = 0
+#    while True:
+#       # Look for the next thesis until there are no more
+#       try: metadata = records.next().get_metadata()
+#       except: break
 
-      n += 1
-      thisthesis = Thesis() # new Thesis object
+#       n += 1
+#       thisthesis = Thesis() # new Thesis object
       
-      # Try to find each metadata type, not all theses have all of these
-      try: thisthesis.title = purify(str(metadata['title']))
-      except: pass
+#       # Try to find each metadata type, not all theses have all of these
+#       try: thisthesis.title = purify(str(metadata['title']))
+#       except: pass
 
-      try: thisthesis.author = purify(str(metadata['creator']))
-      except: pass
+#       try: thisthesis.author = purify(str(metadata['creator']))
+#       except: pass
 
-      try: thisthesis.abstract = purify(str(metadata['description']))
-      except: pass
+#       try: thisthesis.abstract = purify(str(metadata['description']))
+#       except: pass
 
-      try: thisthesis.language = str(metadata['language'])[2:-2]
-      except: pass
-      try: thisthesis.date = str(metadata['date'])[2:-2]
-      except: pass
-      # Link to the ethesis page
-      try: thisthesis.link = str(metadata['identifier'])[2:-2]
-      except: pass
-      try: thisthesis.subject = str(metadata['subject'])[1:-1]
-      except: pass
-      # Master's or Doctoral
-      try: thisthesis.thesistype = purify(str(metadata['type']))
-      except: pass
-      # Faculty and department, omit the "University of Helsinki" in the beginning
-      try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
-      except: pass
+#       try: thisthesis.language = str(metadata['language'])[2:-2]
+#       except: pass
+#       try: thisthesis.date = str(metadata['date'])[2:-2]
+#       except: pass
+#       # Link to the ethesis page
+#       try: thisthesis.link = str(metadata['identifier'])[2:-2]
+#       except: pass
+#       try: thisthesis.subject = str(metadata['subject'])[1:-1]
+#       except: pass
+#       # Master's or Doctoral
+#       try: thisthesis.thesistype = purify(str(metadata['type']))
+#       except:
+#          print("Error for ",metadata['type'])
+#          pass
+#       # Faculty and department, omit the "University of Helsinki" in the beginning
+#       try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
+#       except: pass
       
-      # Make sure that the link is correct
-      thisthesis.link = thisthesis.link[thisthesis.link.find('http'):] 
-      theses.append(thisthesis) # add the thesis to the theses array
-      print(thisthesis)
-      time.sleep(0.2)
+#       # Make sure that the link is correct
+#       thisthesis.link = thisthesis.link[thisthesis.link.find('http'):] 
+#       theses.append(thisthesis) # add the thesis to the theses array
+#       print(thisthesis)
+#       time.sleep(0.2)
     
-   return theses,n
+#    return theses,n
 
-def metaharvester(metadata):
+def metaharvester(metadata, thesis=None):
     # A function to read the metadatas obtained from ethesis and save them into Thesis objects
 
-    thisthesis = Thesis() # new Thesis object
+    if thesis is None:
+      thisthesis = Thesis() # new Thesis object
+    else:
+      thisthesis = thesis
+
+    thisthesis.metadata = metadata # Store the full metadata as well.
 
     # Try to find each metadata type, not all theses have all of these
     try: thisthesis.title = purify(str(metadata['title']))
@@ -167,7 +193,12 @@ def metaharvester(metadata):
     try: thisthesis.author = purify(str(metadata['creator']))
     except: pass
 
-    try: thisthesis.abstract = purify(str(metadata['description']))
+    try:
+        thisthesis.abstract = purify(str(metadata['description']))
+        for abs in thisthesis.metadata['description']:
+            l = langdetect.detect(abs)
+            print("adding abstracts entry for ", l, ":", abs[:12],"...")
+            thisthesis.abstracts[l] = abs
     except: pass
 
     try: thisthesis.language = str(metadata['language'])[2:-2]
@@ -188,7 +219,7 @@ def metaharvester(metadata):
 
     # Make sure that the link is correct
     thisthesis.link = thisthesis.link[thisthesis.link.find('http'):]
-
+    print(thisthesis)
     return thisthesis
 
 
@@ -261,7 +292,7 @@ def countWords(gradu,pdfname):
     f.close()
     
     # Sorting the word list, the most mentioned word goes to last one
-    words = sorted(words.iteritems(), key=lambda (k,v): (v,k))
+    words = sorted(words.iteritems(), key=lambda k,v: (v,k))
     # Strip the counts of single words (from dictionary to word list)
     words = [w[0] for w in words]
     # Remove the common words
