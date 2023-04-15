@@ -32,6 +32,7 @@ class Thesis(object):
     
     def __init__(self, metadata=None):
       # Initializing the values
+      self.id = ''
       self.author = ''
       self.title = ''
       self.abstract = ''
@@ -55,13 +56,16 @@ class Thesis(object):
 def dumpTheses(gradut):
 	with open('thesisdump.pkl','wb') as output:
         	pickle.dump(gradut, output, pickle.HIGHEST_PROTOCOL)
-def loadTheses():
+def loadTheses(reprocess = False):
    with open('thesisdump.pkl','rb') as inp:
             gradut = pickle.load(inp)
    print('Loaded %d theses' % len(gradut))
-   print("Reprocessings")
-   gradut_again = [metaharvester(g.metadata) for g in gradut]
-   return gradut_again
+   if reprocess:
+      print("Reprocessings")
+      gradut_again = [metaharvester(g.metadata) for g in gradut]
+      return gradut_again
+   else:
+      return gradut
 
 def downloadpdf(url):
     # A function to download a pdf file from a link to http://ethesis.helsinki.fi/
@@ -83,16 +87,24 @@ def downloadpdf(url):
     # the file is now saved on the computer, return the filename (=> path?)
     return pdfname
 
-def getGradus(setname,fromdate='2014-09-14', max = 3):
+def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
 
     # A function for reading the thesis entries from the database
     # fromdate as yyyy-mm-dd
-    gradut = []
+
+    # Check which ids we already have loaded. Ugly double comprehesion, since the identifiers are not sorted. 
+    readyids = [g.metadata['identifier'][i][22:] for g in gradut for i in range(len(g.metadata['identifier'])) if "hdl.handle" in g.metadata['identifier'][i]]
+    print(readyids)
     sickle = Sickle('http://helda.helsinki.fi/oai/request')
     with open('iideet.txt','r') as f:
         i = 0
         for line in f:
             identifier = 'oai:helda.helsinki.fi:'+line.strip()
+            if line.strip() in readyids:
+               print(identifier, "already read, skipping")
+               i = i+1
+               continue
+            print("Querying HELDA for ", identifier)
             record = sickle.GetRecord(**{'metadataPrefix': 'oai_dc','identifier': identifier})
             try:
                metadata = record.get_metadata()
@@ -100,11 +112,14 @@ def getGradus(setname,fromdate='2014-09-14', max = 3):
                print("No metadata for", line.strip(), "skipping record",record)
                continue
 
-            gradut.append(metaharvester(metadata))
+            g = metaharvester(metadata)
+            if (g.id not in readyids):
+               gradut.append(g)
             #print(metadata['description'][0])
             time.sleep(1)
             i = i+1
             if i >= max:
+                print("Read max number of these thesis (max", max,")")
                 break
     
 #    while n > 0:
@@ -176,6 +191,10 @@ def purify(string):
     
 #    return theses,n
 
+doctoral_strs = ["doctoral", "väitöskirja", "Monografiavhandling", 
+                 "Artikelavhandling", "doctoralThesis", "Doctoral dissertation (article-based)", "Doctoral dissertation (monograph)"]
+master_strs = ["pro gradu", "master's thesis"]
+
 def metaharvester(metadata, thesis=None):
     # A function to read the metadatas obtained from ethesis and save them into Thesis objects
 
@@ -185,6 +204,9 @@ def metaharvester(metadata, thesis=None):
       thisthesis = thesis
 
     thisthesis.metadata = metadata # Store the full metadata as well.
+
+    thisthesis.id = [metadata['identifier'][i][22:] for i in range(len(metadata['identifier'])) if "hdl.handle" in metadata['identifier'][i]][0]
+
 
     # Try to find each metadata type, not all theses have all of these
     try: thisthesis.title = purify(str(metadata['title']))
@@ -210,8 +232,20 @@ def metaharvester(metadata, thesis=None):
     except: pass
     try: thisthesis.subject = str(metadata['subject'])[1:-1]
     except: pass
-    # Master's or Doctoral
-    try: thisthesis.thesistype = purify(str(metadata['type']))
+    # Master's or Doctoral - now collates to two tags: doctor/master
+    try:
+      thisthesis.thesistype = purify(str(metadata['type']))
+      for type in metadata['type']:
+         for dtype in doctoral_strs:
+          if dtype.casefold() in type.casefold():
+              thisthesis.thesistype = 'doctor'
+              break
+         for dtype in master_strs:
+          if dtype.casefold() in type.casefold():
+              thisthesis.thesistype = 'master'
+              break
+         
+          
     except: pass
     # Faculty and department, omit the "University of Helsinki" in the beginning
     try: thisthesis.unit = purify(str(metadata['contributor']))[21:]

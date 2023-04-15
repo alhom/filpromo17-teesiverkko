@@ -15,17 +15,31 @@ kayttis = 'hdl_10138_18094'
 
 # Open the connection
 
-def harvest(reharvest = False, max = 3):
-   # List the records with the given key
-   if reharvest:
+# reharvest:
+# 0 - only unpickle
+# 1 - unpickle and reprocesss their metadata
+# 2 - harvest again from HELDA, but only nonexisting entries
+# 3 - harvest again from HELDA, everything
+def harvest(reharvest = 2, max = 3):
+
+   if reharvest == 0:
+      gradut = loadTheses(False)
+   elif reharvest == 1:
+      gradut = loadTheses(True)
+   elif reharvest == 2:
       print('Harvesting theses')
-      gradut = getGradus(matlu_gradut_1, max)
-   else:
-      print('Loading theses')
-      gradut = loadTheses()
+      gradut = loadTheses(False)
+      gradut = getGradus(matlu_gradut_1, max=max, gradut = gradut)
+   elif reharvest == 3:
+      print('Harvesting theses')
+      gradut = getGradus(matlu_gradut_1, max=max)
+   # else:
+   #    print('Loading theses')
+   #    gradut = loadTheses()
 
 
    for gradu in gradut:
+      pass
       #print(gradu.author+':\t\t'+gradu.title)
       print(gradu.unit)
       

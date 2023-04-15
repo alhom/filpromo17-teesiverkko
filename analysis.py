@@ -10,41 +10,164 @@ from nltk import FreqDist
 from nltk.corpus import stopwords
 import graduharvest
 import numpy as np
+import sys
 import gensim
+from gensim import corpora as gcorpora
+from gensim import models
+from gensim import similarities
+import libvoikko
+import lemmy
+import matplotlib.pyplot as plt
+import matplotlib
 
-gradut_all = graduharvest.harvest(False, max = 3)
-gradut = []
+class dummyworder:
+   def stem(token):
+      return token
+   def lemmatize(token):
+      return token
+
+class Voikotin:
+   def __init__(self):
+      self.v = libvoikko.Voikko(u'fi')
+
+   def lemmatize(self, token):
+      a = self.v.analyze(token)
+      if (a):
+         return a[0]['BASEFORM']
+      else:
+         return token
+
+class Lemmytizer:
+   def __init__(self):
+      self.lemmy = lemmy.load('sv')
+   def lemmatize(self, token):
+      return self.lemmy.lemmatize("",token)[0]
+
+gradut_all = graduharvest.harvest(reharvest=0, max = 1e32)
+gradut = {}
+abslangs = {}
+singlelans = {}
+# Collect theses by availabe abstract languages
 for g in gradut_all:
-   print([k for k in g.abstracts.keys()])
-   if "en" in g.abstracts.keys():
-      #g.abstract = g.abstracts["en"]
-      gradut.append(g)
-   else:
-      # translate here
-      pass
+   for k in g.abstracts.keys():
+      try:
+         gradut[k].append(g)
+         abslangs[k] = abslangs[k]+1
+      except:
+         gradut[k] = [g]
+         abslangs[k] = 1
+   if(len(g.abstracts.keys())==1):
+      l = list(g.abstracts.keys())[0]
+      print(g.metadata['identifier'], 'has only single language abstract, ', l)
+      try:
+         singlelans[l] = singlelans[l]+1
+      except:
+         singlelans[l] = 1
 
-print("Looking at ", len(gradut), "theses")
+
+print("Looking at ", len(gradut_all), "theses, statistics")
+print("Abstract languages:")
+for al in abslangs.keys():
+   print("abstracts of language", al, abslangs[al])
+print("Single language abstracts in languages", singlelans)
+
+langs = ["en", "fi", "sv"]
+print("Analysing following languages:", langs)
+
+voikotin = Voikotin()
+lemmytizer = Lemmytizer()
 
 #this is redoing countWords but for abstracts
-stop_words = set(stopwords.words("english"))
-stemmer = SnowballStemmer("english", ignore_stopwords=True)
-lemmatizer = WordNetLemmatizer()
-for g in gradut:
-   print(g.title)
-   tokens = [word for word in word_tokenize(g.abstracts['en']) if word.isalpha() and word not in stop_words]
-   # print(tokens[:10])
+# ... also redoing it by just calling 
+stemmers = {
+   'en' : SnowballStemmer("english", ignore_stopwords=True),
+   'fi' : SnowballStemmer("finnish", ignore_stopwords=True),
+   'sv' : SnowballStemmer("swedish", ignore_stopwords=True)
+   }
+stop_wordss = {
+   'en' : set(stopwords.words("english")),
+   'fi' : set(stopwords.words("finnish")),
+   'sv' : set(stopwords.words("swedish")),
+   }
+lemmatizers = {
+   'en' : WordNetLemmatizer(),
+   'fi' : voikotin,
+   'sv' : lemmytizer
+}
 
-   # stems = [stemmer.stem(t) for t in tokens]
-   lemmas = [lemmatizer.lemmatize(t) for t in tokens]
-   freqdist = FreqDist(lemmas)
-   print(freqdist.most_common(20))
-   print(freqdist)
-   g.freqdist = freqdist
-   g.commonwords = [k for (k,n) in freqdist.most_common(20)]
-   g.wordcount = len(freqdist)
+# Build initial corpora
+corpora = {}
+for lang in langs:
+   corpora[lang] = {}
+   try:
+      stop_words = stop_wordss[lang]
+   except:
+      print("No stop words found for language", lang, "using no stopwords")
+      stop_words = {}
+   try:
+      stemmer = stemmers[lang]
+   except:
+      print("No stemmer for language", lang)
+      stemmer = dummyworder
+   try:
+      lemmatizer = lemmatizers[lang]
+   except:
+      print("No lemmatizer for language", lang)
+      lemmatizer = dummyworder
+   
+   for g in gradut[lang]:
+      # print(g.title)
+      tokens = [word for word in word_tokenize(g.abstracts[lang]) if word.isalpha() and word not in stop_words]
+      # print(tokens[:10])
 
-#matrix
-closenessMatrix = np.zeros((len(gradut),len(gradut)))
-for i,g1 in enumerate(gradut):
-   for g2 in gradut[i+1:]:
-      pass
+      # stems = [stemmer.stem(t) for t in tokens]
+      lemmas = [lemmatizer.lemmatize(t) for t in tokens]
+      # freqdist = FreqDist(lemmas)
+      # print(freqdist.most_common(5))
+      # print(freqdist)
+      # g.freqdist = freqdist
+      # g.commonwords = [k for (k,n) in freqdist.most_common(20)]
+      # g.wordcount = len(freqdist)
+      corpora[lang][g.id] = lemmas
+
+#handle the corpora with gensim
+
+gdicts = {}
+gbows = {}
+gmodels = {}
+gindices = {}
+for lang in langs:
+   print("Gensim:", lang)
+   corpus = corpora[lang]
+   gdicts[lang] = gcorpora.Dictionary(corpus.values())
+   gbows[lang] = [gdicts[lang].doc2bow(text) for text in corpus.values()]
+   print(gdicts[lang])
+   gmodels[lang] = models.TfidfModel(gbows[lang])
+   nf=len(gdicts[lang].dfs)
+   gindices[lang] = similarities.SparseMatrixSimilarity(gbows[lang], num_features=nf)
+
+
+
+# generate similarity matrices
+similarities = {}
+
+for lang in langs:
+   print("similarity checking:", lang)
+
+   corpus = corpora[lang]
+   similarities[lang] = np.zeros((len(corpus),len(corpus)))
+   index = gindices[lang]
+   model = gmodels[lang]
+   print(model, index)
+   for i,query in enumerate(corpus):
+      bow = gbows[lang][i]
+      print("querying", list(corpora[lang].keys())[i])
+      tfids = index[model[bow]]
+      #print(tfids)
+      similarities[lang][i,:] = np.array(tfids)
+
+   
+   fig = plt.figure()
+   plt.matshow(similarities[lang], norm=matplotlib.colors.LogNorm(vmin=1e-2, vmax=1))
+   plt.savefig("matrix_"+lang+".png")
+
