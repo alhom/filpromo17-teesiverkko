@@ -38,6 +38,8 @@ class Thesis(object):
       self.abstract = ''
       self.abstracts = {}
       self.language = ''
+      self.facultyid = 'other'
+      self.faculty = ''
       self.unit = ''
       self.date = ''
       self.link = ''
@@ -53,19 +55,31 @@ class Thesis(object):
           metaharvester(metadata, thesis=self)
 
 
-def dumpTheses(gradut):
-	with open('thesisdump.pkl','wb') as output:
-        	pickle.dump(gradut, output, pickle.HIGHEST_PROTOCOL)
-def loadTheses(reprocess = False):
-   with open('thesisdump.pkl','rb') as inp:
-            gradut = pickle.load(inp)
-   print('Loaded %d theses' % len(gradut))
+def dumpTheses(gradut, filename='thesisdump.pkl'):
+   gradut_dict = {g.id : g for g in gradut}
+   with open(filename,'wb') as output:
+        	pickle.dump(list(gradut_dict.values()), output, pickle.HIGHEST_PROTOCOL)
+                
+def loadTheses(reprocess = False, filename='thesisdump.pkl', verbose=False):
+   with open(filename,'rb') as inp:
+      gradut = pickle.load(inp)
+      print('Loaded %d theses' % len(gradut))
    if reprocess:
       print("Reprocessings")
-      gradut_again = [metaharvester(g.metadata) for g in gradut]
+      gradut_again = [metaharvester(g.metadata, verbose=verbose) for g in gradut]
       return gradut_again
    else:
       return gradut
+
+def filterTheses(gradut, indexfile="iideet.txt"):
+   gradut_dict = {g.id : g for g in gradut}
+   gradut = list(gradut_dict.values())
+   if indexfile is not None:
+      with open(indexfile,'r') as index:
+         indexdata = index.read().splitlines()
+         gradut_2 = [g for g in gradut if g.id in indexdata]
+   return gradut_2
+
 
 def downloadpdf(url):
     # A function to download a pdf file from a link to http://ethesis.helsinki.fi/
@@ -93,7 +107,7 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
     # fromdate as yyyy-mm-dd
 
     # Check which ids we already have loaded. Ugly double comprehesion, since the identifiers are not sorted. 
-    readyids = [g.metadata['identifier'][i][22:] for g in gradut for i in range(len(g.metadata['identifier'])) if "hdl.handle" in g.metadata['identifier'][i]]
+    readyids = [g.id for g in gradut]
     print(readyids)
     sickle = Sickle('http://helda.helsinki.fi/oai/request')
     with open('iideet.txt','r') as f:
@@ -129,6 +143,60 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
         
     print('Found '+str(len(gradut))+' theses')
     dumpTheses(gradut)
+    return gradut
+
+def getRecords(setname,fromdate='2014-09-14', untildate='2024-01-01', max = 3, dumpfile=None):
+
+    # A function for reading the thesis entries from the database
+    # fromdate as yyyy-mm-dd
+    sickle = Sickle('http://helda.helsinki.fi/oai/request')
+    recs = sickle.ListRecords(**{'metadataPrefix': 'oai_dc', 'set':setname, 'from':fromdate, 'until':untildate})
+    nrecords = recs.oai_response.raw.count('</header>') # surely there is a better way of counting the records?
+    print("Chunks of", nrecords, "available, of total", int(recs.resumption_token.complete_list_size))
+    harvest = True
+    gradut = []
+    total = 0
+    while harvest:
+      ir = 0
+      while ir < nrecords:
+         try:
+            record = recs.next()
+         except:
+             harvest = False
+             break
+         nrecords = recs.oai_response.raw.count('</header>')
+         try:
+            metadata = record.get_metadata()
+         except:
+            print("No metadata for record, skipping", record)
+            continue
+
+         g = metaharvester(metadata, verbose=False)
+         gradut.append(g)
+         #print(metadata['description'][0])
+         total = total+1
+         if total >= max:
+               print("Read max number of these thesis (max", max,")")
+               break
+         ir = ir+1
+         print(total, ir, "/",nrecords)
+         
+      # get the next chunk if needed   
+      if(total >= int(recs.resumption_token.complete_list_size)):
+          harvest = False
+          break
+      else:
+         print(total, "harvesting next batch")
+         time.sleep(2.5)
+         
+
+   
+    print('Found '+str(len(gradut))+' theses')
+    if dumpfile==None:
+      df = setname+".pkl"
+    else:
+      df = dumpfile
+    dumpTheses(gradut, df)
     return gradut
 
 #cases for entry strings: 
@@ -195,7 +263,7 @@ doctoral_strs = ["doctoral", "väitöskirja", "Monografiavhandling",
                  "Artikelavhandling", "doctoralThesis", "Doctoral dissertation (article-based)", "Doctoral dissertation (monograph)"]
 master_strs = ["pro gradu", "master's thesis"]
 
-def metaharvester(metadata, thesis=None):
+def metaharvester(metadata, thesis=None, verbose=True):
     # A function to read the metadatas obtained from ethesis and save them into Thesis objects
 
     if thesis is None:
@@ -219,9 +287,19 @@ def metaharvester(metadata, thesis=None):
         thisthesis.abstract = purify(str(metadata['description']))
         for abs in thisthesis.metadata['description']:
             l = langdetect.detect(abs)
-            print("adding abstracts entry for ", l, ":", abs[:12],"...")
+            if(verbose): print("adding abstracts entry for ", l, ":", abs[:12],"...")
             thisthesis.abstracts[l] = abs
-    except: pass
+    except:
+        print("No abstract as 'description' for ", metadata['title'], "trying title instead")
+        try:
+         thisthesis.abstract = purify(str(metadata['title']))
+         for abs in thisthesis.metadata['title']:
+               l = langdetect.detect(abs)
+               if(verbose): print("adding abstracts entry for ", l, ":", abs[:12],"...")
+               thisthesis.abstracts[l] = abs
+        except:
+         print("Couldn't even use title! Empty string it is.") 
+        
 
     try: thisthesis.language = str(metadata['language'])[2:-2]
     except: pass
@@ -248,12 +326,39 @@ def metaharvester(metadata, thesis=None):
           
     except: pass
     # Faculty and department, omit the "University of Helsinki" in the beginning
-    try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
+    #  try: thisthesis.unit = purify(str(metadata['contributor']))[21:]
+    #  except: pass
+    try:
+       thisthesis.unit = purify(str(metadata['contributor']))[21:]
+       for abs in thisthesis.metadata['contributor']:
+          if(verbose): print("adding unit entry,", abs[:12],"...")
+          sabs = abs.split(", ")
+          thisthesis.faculty = sabs[1]
+          #thisthesis.unit[l] = abs[2]
+          if "bio" in sabs[1].casefold():
+              thisthesis.facultyid = "bio"
+          if "matemaattis" in sabs[1].casefold():
+              thisthesis.facultyid = "matlu"
+          if "Faculty of Science".casefold() in sabs[1].casefold():
+              thisthesis.facultyid = "matlu"
+          if "humanistinen" in sabs[1].casefold():
+              thisthesis.facultyid = "hum"
+          if "arts" in sabs[1].casefold():
+              thisthesis.facultyid = "hum"
+          if "käyttäytymis" in sabs[1].casefold():
+              thisthesis.facultyid = "cond"
+          if "behavio" in sabs[1].casefold():
+              thisthesis.facultyid = "cond"
+          if "farmasian" in sabs[1].casefold():
+              thisthesis.facultyid = "farm"
+          if "pharmacy" in sabs[1].casefold():
+              thisthesis.facultyid = "farm"
     except: pass
+    
 
     # Make sure that the link is correct
     thisthesis.link = thisthesis.link[thisthesis.link.find('http'):]
-    print(thisthesis)
+    if(verbose): print(thisthesis)
     return thisthesis
 
 
