@@ -35,6 +35,7 @@ class Thesis(object):
       self.id = ''
       self.author = ''
       self.title = ''
+      self.titles = {}
       self.abstract = ''
       self.abstracts = {}
       self.language = ''
@@ -281,18 +282,28 @@ def metaharvester(metadata, thesis=None, verbose=True):
     try: thisthesis.title = purify(str(metadata['title']))
     except: pass
 
+    for abs in thisthesis.metadata['title']:
+      # try:
+         l = langdetect.detect(abs)
+         if(verbose): print("adding title entry for ", l, ":", abs[:12],"...")
+         thisthesis.titles[l] = abs
+      # except:
+      #    print("A weird title entry for ", metadata['title'], ":", abs[:12], "not using")
+
     try: thisthesis.author = purify(str(metadata['creator']))
     except: pass
 
     try:
         thisthesis.abstract = purify(str(metadata['description']))
         for abs in thisthesis.metadata['description']:
-            l = langdetect.detect(abs)
-            if(verbose): print("adding abstracts entry for ", l, ":", abs[:12],"...")
-            thisthesis.abstracts[l] = abs
+            try:
+               l = langdetect.detect(abs)
+               if(verbose): print("adding abstracts entry for ", l, ":", abs[:12],"...")
+               thisthesis.abstracts[l] = abs
+            except:
+               print("A weird abstract entry for ", metadata['title'], ":", abs[:12], "not using")
     except:
-        pass
-        print("No abstract as 'description' for ", metadata['title'], "trying title instead")
+        print("No abstract as 'description' for ", metadata['title'], metadata['identifier'], "trying title instead")
         try:
          thisthesis.abstract = purify(str(metadata['title']))
          for abs in thisthesis.metadata['title']:

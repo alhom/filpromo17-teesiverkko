@@ -196,6 +196,11 @@ for lang in langs:
    
    for g in gradut[lang]:
       # print(g.title)
+      corp = g.abstracts[lang]
+      try:
+         corp = g.titles[lang] + corp
+      except:
+         pass
       tokens = [word for word in word_tokenize(g.abstracts[lang]) if word.isalpha() and word not in stop_words]
       if len(tokens) == 0:
          pass # not even proper keywords in metadata
@@ -344,10 +349,10 @@ for p,g in enumerate(gradut_all):
    # print(g.author, i, topsi[:5])
    for j in topsi[1:edgesfromnode]:
       if(j == i): continue
-      if((similarities_all[i,j] == 0) or (similarities_all[i,j] < wmax*0.1)):
+      if((similarities_all[i,j] == 0) or (similarities_all[i,j] < wmax*0.001)):
          break
       G.add_edge(i,j)
-      G.edges[i,j]["weight"] = similarities_all[i,j]**1
+      G.edges[i,j]["weight"] = similarities_all[i,j]**.9
 
    # for j,g2 in enumerate(gradut_all):
    #    if(j == i):
@@ -373,8 +378,9 @@ fig.tight_layout()
 
 # seeds
 # 1969   ok-ish, but very vertical
+# 2023   cool, this is about the same as 2017, but flipped clusters!
 
-pos = nx.spring_layout(G, weight ="weight", seed=2023, iterations=1000)  # nearly the same as Gephi Force
+pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=100, iterations=1000)  # nearly the same as Gephi Force
 
 colors = [facultycolors[G.nodes[g]["facultyid"]] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
