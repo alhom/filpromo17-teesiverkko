@@ -370,7 +370,11 @@ lgold = "#f9e79e"
 offorange = "#e9bc76"
 fig = plt.figure()
 fig.tight_layout()
-pos = nx.spring_layout(G, weight ="weight", seed=1969, iterations=1000)  # nearly the same as Gephi Force
+
+# seeds
+# 1969   ok-ish, but very vertical
+
+pos = nx.spring_layout(G, weight ="weight", seed=2023, iterations=1000)  # nearly the same as Gephi Force
 
 colors = [facultycolors[G.nodes[g]["facultyid"]] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
