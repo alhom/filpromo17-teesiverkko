@@ -35,8 +35,9 @@ def harvest(reharvest = 0, max = 3):
    elif reharvest == 0:
       gradut = loadTheses(False)
    elif reharvest == 1:
-      gradut = (loadTheses(True, filename=gradut_kaikki+".pkl") +
-                loadTheses(True, filename=vaikkarit_kaikki+".pkl"))
+      gradut = loadTheses(True)
+      # gradut = (loadTheses(True, filename=gradut_kaikki+".pkl") +
+      #           loadTheses(True, filename=vaikkarit_kaikki+".pkl"))
    elif reharvest == 2:
       print('Harvesting theses')
       gradut = loadTheses(False)

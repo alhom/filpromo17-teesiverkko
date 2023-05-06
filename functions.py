@@ -71,7 +71,7 @@ def loadTheses(reprocess = False, filename='thesisdump.pkl', verbose=False):
    else:
       return gradut
 
-def filterTheses(gradut, indexfile="iideet.txt"):
+def filterTheses(gradut, indexfile="iideet_2023.txt"):
    gradut_dict = {g.id : g for g in gradut}
    gradut = list(gradut_dict.values())
    if indexfile is not None:
@@ -110,7 +110,7 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
     readyids = [g.id for g in gradut]
     print(readyids)
     sickle = Sickle('http://helda.helsinki.fi/oai/request')
-    with open('iideet.txt','r') as f:
+    with open('iideet_2023.txt','r') as f:
         i = 0
         for line in f:
             identifier = 'oai:helda.helsinki.fi:'+line.strip()
@@ -260,7 +260,8 @@ def purify(string):
 #    return theses,n
 
 doctoral_strs = ["doctoral", "väitöskirja", "Monografiavhandling", 
-                 "Artikelavhandling", "doctoralThesis", "Doctoral dissertation (article-based)", "Doctoral dissertation (monograph)"]
+                 "Artikelavhandling", "doctoralThesis", "Doctoral dissertation (article-based)", "Doctoral dissertation (monograph)",
+                 ]
 master_strs = ["pro gradu", "master's thesis"]
 
 def metaharvester(metadata, thesis=None, verbose=True):
@@ -290,6 +291,7 @@ def metaharvester(metadata, thesis=None, verbose=True):
             if(verbose): print("adding abstracts entry for ", l, ":", abs[:12],"...")
             thisthesis.abstracts[l] = abs
     except:
+        pass
         print("No abstract as 'description' for ", metadata['title'], "trying title instead")
         try:
          thisthesis.abstract = purify(str(metadata['title']))
@@ -314,14 +316,22 @@ def metaharvester(metadata, thesis=None, verbose=True):
     try:
       thisthesis.thesistype = purify(str(metadata['type']))
       for type in metadata['type']:
+         brk = False
+         if type == "Thesis" and any(["Finnish Meteorological Institute Contributions" in m for m in metadata['relation']]):
+             thisthesis.thesistype = 'doctor'
+             break
          for dtype in doctoral_strs:
           if dtype.casefold() in type.casefold():
               thisthesis.thesistype = 'doctor'
+              brk = True
               break
          for dtype in master_strs:
           if dtype.casefold() in type.casefold():
               thisthesis.thesistype = 'master'
+              brk = True
               break
+         if brk:
+             break
          
           
     except: pass
@@ -339,7 +349,7 @@ def metaharvester(metadata, thesis=None, verbose=True):
               thisthesis.facultyid = "bio"
           if "matemaattis" in sabs[1].casefold():
               thisthesis.facultyid = "matlu"
-          if "Faculty of Science".casefold() in sabs[1].casefold():
+          if "faculty of science" in sabs[1].casefold():
               thisthesis.facultyid = "matlu"
           if "humanistinen" in sabs[1].casefold():
               thisthesis.facultyid = "hum"
@@ -347,13 +357,36 @@ def metaharvester(metadata, thesis=None, verbose=True):
               thisthesis.facultyid = "hum"
           if "käyttäytymis" in sabs[1].casefold():
               thisthesis.facultyid = "cond"
+          if "kasvatustie" in sabs[1].casefold():
+              thisthesis.facultyid = "cond"
+          if "social" in sabs[1].casefold(): #valtsikan relevantit ohjelmat condukseen?
+              thisthesis.facultyid = "cond"
+          if "educational" in sabs[1].casefold():
+              thisthesis.facultyid = "cond"
           if "behavio" in sabs[1].casefold():
+              thisthesis.facultyid = "cond"
+          if "lääket" in sabs[1].casefold(): # Psykologit oli conduslaisia?
               thisthesis.facultyid = "cond"
           if "farmasian" in sabs[1].casefold():
               thisthesis.facultyid = "farm"
           if "pharmacy" in sabs[1].casefold():
               thisthesis.facultyid = "farm"
+          if "maatalous" in sabs[1].casefold():
+              thisthesis.facultyid = "bio"
+          if "agriculture".casefold() in sabs[1].casefold():
+              thisthesis.facultyid = "bio"
     except: pass
+    if thisthesis.facultyid == "other":
+      try:
+       if any(["Meteorological"in m for m in metadata['relation']]):
+         thisthesis.facultyid = "matlu"
+      except:
+          pass
+      try:
+       if any(["Ilmatieteen laitos" in m for m in metadata['publisher']]):
+         thisthesis.facultyid = "matlu"
+      except:
+         pass
     
 
     # Make sure that the link is correct

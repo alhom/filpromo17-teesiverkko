@@ -63,8 +63,8 @@ facultycolors={
    'other':np.array([242,241,236])/275 #isabelline but darker
 }
 
-
-gradut_alll = graduharvest.harvest(reharvest=0, max = 1e32)
+print("Loading...")
+gradut_alll = graduharvest.harvest(reharvest=1, max = 1e32)
 print("gradut_alll len", len(gradut_alll))
 gradut_all = filterTheses(gradut_alll)
 print("gradut_alll len after filter", len(gradut_alll))
@@ -80,6 +80,33 @@ gradut = {}
 abslangs = {}
 singlelans = {}
 # Collect theses by availabe abstract languages
+
+gradut_sus = [g for g in gradut_all if not ((g.thesistype == 'doctor') or (g.thesistype == 'master'))]
+if len(gradut_sus) > 0:
+   print("Found", len(gradut_sus), "suspect entries, fix these before continuing:")
+   for g in gradut_sus:
+      print(g, g.thesistype, g.metadata['type'])
+   sys.exit()
+
+gradut_sus = [g for g in gradut_all if g.facultyid == 'other']
+if len(gradut_sus) > 0:
+   print("Found", len(gradut_sus), "suspect entries, fix these before continuing:")
+   for g in gradut_sus:
+      print(g)
+      try:
+         print("relation", g.metadata['relation'])
+      except:
+         pass
+      try:
+         print("contributor", g.metadata['contributor'])
+      except:
+         pass
+      try:
+         g.metadata['publisher'], g.metadata['publisher']
+      except:
+         pass
+   sys.exit()
+
 
 for i,g in enumerate(gradut_all):
    g.global_id = i
@@ -107,7 +134,7 @@ print("Single language abstracts in languages", singlelans)
 
 langs = ["en", "fi", "sv"]
 langs = [l for l in abslangs.keys() if abslangs[l] > 1]
-print("Analysing following languages:", [langname(l) for l in langs])
+print("Analysing following languages:", [l for l in langs])
 
 voikotin = Voikotin()
 lemmytizer = Lemmytizer()
@@ -185,12 +212,13 @@ for lang in langs:
       corpora[lang][g.global_id] = lemmas
 
 skipsims = False
-try:
-   with open("similarities.pkl",'rb') as input:
-      similarities = pickle.load(input)
-      skipsims = True
-except:
-   similarities = {}
+# try:
+#    with open("similarities.pkl",'rb') as input:
+#       similarities = pickle.load(input)
+#       skipsims = True
+# except:
+#    similarities = {}
+similarities = {}
 
 #handle the corpora with gensim - no need if similarities matrices exist
 if not skipsims:
@@ -268,6 +296,7 @@ with open("similarities_all.pkl",'wb') as output:
 
 fig = plt.figure()
 plt.matshow(similarities_all, norm=matplotlib.colors.LogNorm(vmin=1e-2, vmax=1))
+plt.colorbar()
 plt.savefig("matrix_all.png")
 
 
@@ -281,7 +310,7 @@ plt.savefig("num_words.png")
 
 
 # Time to start creating the graph, using networkx
-edgesfromnode = 5
+edgesfromnode = 6
 G = nx.Graph()
 
 for p,g in enumerate(gradut_all):
@@ -315,10 +344,10 @@ for p,g in enumerate(gradut_all):
    # print(g.author, i, topsi[:5])
    for j in topsi[1:edgesfromnode]:
       if(j == i): continue
-      if((similarities_all[i,j] == 0) or (similarities_all[i,j] < wmax*0.01)):
+      if((similarities_all[i,j] == 0) or (similarities_all[i,j] < wmax*0.1)):
          break
       G.add_edge(i,j)
-      G.edges[i,j]["weight"] = similarities_all[i,j]**2
+      G.edges[i,j]["weight"] = similarities_all[i,j]**1
 
    # for j,g2 in enumerate(gradut_all):
    #    if(j == i):
@@ -341,7 +370,7 @@ lgold = "#f9e79e"
 offorange = "#e9bc76"
 fig = plt.figure()
 fig.tight_layout()
-pos = nx.spring_layout(G, weight ="weight", seed=1969, iterations=100)  # nearly the same as Gephi Force
+pos = nx.spring_layout(G, weight ="weight", seed=1969, iterations=1000)  # nearly the same as Gephi Force
 
 colors = [facultycolors[G.nodes[g]["facultyid"]] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
