@@ -336,8 +336,9 @@
                         $('<span>').text(" – " + _e.l).appendTo(_li);
                     }
                     if (GexfJS.params.showEdgeWeight) {
-                        $('<span>').text(" (" + _e.w + ")").appendTo(_li);
+                        $('<span>').text(" (" + _e.w + ") ").appendTo(_li);
                     }
+                    //$('<span>').text(" " + _e.kw + ")").appendTo(_li);
                     if (_e.d) {
                         _str_in.push(_li);
                     } else {
@@ -740,6 +741,7 @@
                             _tid = _e.attr("target"),
                             _tix = nodeIndexById.indexOf(_tid),
                             _w = _e.find('attvalue[for="weight"]').attr('value') || _e.attr('weight'),
+                            _kw = _e.find('attvalue[for="8"]').attr('value') || _e.attr('8'),
                             _col = _e.find("viz\\:color,color"),
                             _directed = GexfJS.graph.directed;
                         if (_e.attr("type") == "directed") {
@@ -772,6 +774,7 @@
                             w: parseFloat(_w || "1"),
                             C: "rgba(" + _r + "," + _g + "," + _b + ",.7)",
                             l: _e.attr("label") || "",
+                            kw: _kw,
                             d: _directed
                         });
                     });

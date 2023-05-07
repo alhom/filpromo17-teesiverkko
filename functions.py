@@ -33,6 +33,7 @@ class Thesis(object):
     def __init__(self, metadata=None):
       # Initializing the values
       self.id = ''
+      self.langid = {}
       self.author = ''
       self.title = ''
       self.titles = {}

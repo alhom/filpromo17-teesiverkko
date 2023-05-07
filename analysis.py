@@ -107,16 +107,20 @@ if len(gradut_sus) > 0:
          pass
    sys.exit()
 
-
+langis = {}
 for i,g in enumerate(gradut_all):
    g.global_id = i
    for k in g.abstracts.keys():
       try:
          gradut[k].append(g)
          abslangs[k] = abslangs[k]+1
+         g.langid[k] = langis[k]
+         langis[k] += 1
       except:
          gradut[k] = [g]
          abslangs[k] = 1
+         langis[k] = 0
+         g.langid[k] = langis[k]
    if(len(g.abstracts.keys())==1):
       l = list(g.abstracts.keys())[0]
       print(g.metadata['identifier'], 'has only single language abstract, ', l)
@@ -256,7 +260,7 @@ if not skipsims:
    for i,query in enumerate(corpus):
       bow = gbows[lang][i]
       #print("querying", list(corpora[lang].keys())[i])
-      tfids = index[model[bow]]
+      tfids = index[model[bow]] #this could be done also all-to-all for performance!
       #print(tfids)
       similarities[lang][i,:] = np.array(tfids)
 
@@ -334,10 +338,9 @@ for p,g in enumerate(gradut_all):
    # Keep this/these last, lots of text... but ofc it's not sorted
    G.nodes[i]["abstract"] = fmt_abstracts(g.abstracts)
 
-   if(p == 0):
-      print("skibidi")
-      continue
-   
+#hm, not actually sure if adding edges while adding nodes, to possibly uninitialized nodes is a good idea.. splitting the loop
+for p,g in enumerate(gradut_all):
+   i = g.global_id
    # print(similarities_all[i,:i])
    topsi = np.argsort(similarities_all[i,:]).flatten()[::-1]
    # print(topsi)
@@ -353,6 +356,34 @@ for p,g in enumerate(gradut_all):
          break
       G.add_edge(i,j)
       G.edges[i,j]["weight"] = similarities_all[i,j]**.9
+      for langi,vi in g.abstracts.items():
+         if abslangs[langi] < 2:
+            continue
+         model = gmodels[langi]
+         # sims = gindices[ki][model[gbows[ki][g.langid[ki]]]] 
+         if langi in gradut_all[j].abstracts.keys():
+            veci = model[gbows[langi][g.langid[langi]]]
+            vecj = model[gbows[langi][gradut_all[j].langid[langi]]]
+            dots = []
+            dicti = {}
+            dictj = {}
+            dicti = {a:b for a, b in veci}
+            dictj = {a:b for a, b in vecj}
+
+            for a, b in dicti.items():
+               if a in dictj.keys():
+                  dots.append((a,b*dictj[a]))
+            #print(dots)
+            simwords = sorted(dots, key=lambda item: -item[1])
+            edgewordn = 5
+            edgewords = simwords[:edgewordn]
+            edgewords = [gdicts[langi][word[0]]+":{:03f}".format(word[1]) for word in edgewords]
+            edgestr = ""
+            for w in edgewords:
+               edgestr += w +" "
+            G.edges[i,j]["keywords"] = edgestr
+            
+            
 
    # for j,g2 in enumerate(gradut_all):
    #    if(j == i):
