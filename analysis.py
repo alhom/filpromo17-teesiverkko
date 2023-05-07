@@ -237,7 +237,7 @@ if not skipsims:
       gdicts[lang] = gcorpora.Dictionary(corpus.values())
       gbows[lang] = [gdicts[lang].doc2bow(text) for text in corpus.values()]
       print(gdicts[lang])
-      gmodels[lang] = models.TfidfModel(gbows[lang])
+      gmodels[lang] = models.TfidfModel(gbows[lang], smartirs='nfu')
       nf=len(gdicts[lang].dfs)
       gindices[lang] = gsimilarities.SparseMatrixSimilarity(gbows[lang], num_features=nf)
 

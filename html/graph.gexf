@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
-  <meta lastmodifieddate="2023-05-06">
+  <meta lastmodifieddate="2023-05-07">
     <creator>NetworkX 3.1</creator>
   </meta>
   <graph defaultedgetype="undirected" mode="static" name="">
@@ -19,7 +19,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="51.17107421191105" y="-40.04865520713556" z="0.0" />
+        <viz:position x="55.55170961522556" y="-38.69499186652202" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Turja, Raisa" />
           <attvalue for="1" value="bio" />
@@ -35,7 +35,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-25.833445769330304" y="40.632004705538634" z="0.0" />
+        <viz:position x="-15.089280240957583" y="47.192600319473165" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Absetz, Maija" />
           <attvalue for="1" value="hum" />
@@ -51,7 +51,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-35.00149371029464" y="20.797855654327485" z="0.0" />
+        <viz:position x="-5.521211181135835" y="38.840222691040495" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Niiranen, Kristina" />
           <attvalue for="1" value="hum" />
@@ -67,7 +67,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-10.895950610460424" y="33.28618473666486" z="0.0" />
+        <viz:position x="-14.05252607084696" y="29.870384462676274" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Siltanen, Riikka" />
           <attvalue for="1" value="hum" />
@@ -83,7 +83,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-7.863888291032599" y="38.36344188603472" z="0.0" />
+        <viz:position x="-20.654231303585" y="32.40343705469716" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Honka, Anniina" />
           <attvalue for="1" value="hum" />
@@ -99,7 +99,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-12.134320330298502" y="40.412695241868455" z="0.0" />
+        <viz:position x="-9.779873225074683" y="38.26939701693702" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kajanne, Ville" />
           <attvalue for="1" value="hum" />
@@ -115,7 +115,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-23.83739879162775" y="34.644592704025996" z="0.0" />
+        <viz:position x="-16.002381527013792" y="34.182331226563804" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Niemelä, Tiia" />
           <attvalue for="1" value="hum" />
@@ -131,7 +131,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-18.231523985649055" y="45.46923135319396" z="0.0" />
+        <viz:position x="-8.35276929381607" y="45.04679033957121" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ahtola, Aleksi" />
           <attvalue for="1" value="hum" />
@@ -147,7 +147,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-29.10169855011538" y="43.45229615106742" z="0.0" />
+        <viz:position x="-7.855498531393522" y="49.427466185769774" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Aitola, Minna" />
           <attvalue for="1" value="hum" />
@@ -163,7 +163,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-21.726519716212717" y="53.14627193709707" z="0.0" />
+        <viz:position x="-5.757727780610019" y="55.48934498215259" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rämö, Susanna" />
           <attvalue for="1" value="hum" />
@@ -179,7 +179,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-3.330470380203961" y="20.90280619728598" z="0.0" />
+        <viz:position x="-1.548780512424391" y="20.044145473956217" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Grandell, Jens" />
           <attvalue for="1" value="hum" />
@@ -195,7 +195,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-14.452253773523308" y="24.57237963273295" z="0.0" />
+        <viz:position x="-20.02750344859121" y="17.28096173156948" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ahvenniemi, Rebecka Sofia" />
           <attvalue for="1" value="hum" />
@@ -211,7 +211,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-16.947193812936668" y="30.191275278776846" z="0.0" />
+        <viz:position x="-24.58212496902471" y="21.191506631532327" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Wahlström, Kristian" />
           <attvalue for="1" value="hum" />
@@ -227,7 +227,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-10.566692742328494" y="14.807911110206561" z="0.0" />
+        <viz:position x="-19.9100497105133" y="6.787973840664466" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sinquefield-Kangas, Rachel" />
           <attvalue for="1" value="cond" />
@@ -243,7 +243,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-7.933485296529829" y="19.150237694997998" z="0.0" />
+        <viz:position x="-28.73214907790001" y="5.0486904479722385" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kuosmanen, Sinikka" />
           <attvalue for="1" value="cond" />
@@ -259,7 +259,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-6.9509468928473" y="21.851352941871554" z="0.0" />
+        <viz:position x="-19.844060121716083" y="14.84810857582029" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Laaksonen, Fanny" />
           <attvalue for="1" value="hum" />
@@ -275,7 +275,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-8.10834194730043" y="-6.776888330809997" z="0.0" />
+        <viz:position x="12.179935903459544" y="8.626496999678473" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Airta, Emil" />
           <attvalue for="1" value="matlu" />
@@ -291,7 +291,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-9.098635369771618" y="-18.85984994654568" z="0.0" />
+        <viz:position x="24.95149898777816" y="6.522774942540882" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hirviniemi, Olli" />
           <attvalue for="1" value="matlu" />
@@ -307,7 +307,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-1.9081315461478048" y="-18.4193099720991" z="0.0" />
+        <viz:position x="20.022936281930267" y="-1.1553497791174074" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hatakka, Ilari" />
           <attvalue for="1" value="matlu" />
@@ -323,7 +323,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-1.4456100595139196" y="-23.78640489865036" z="0.0" />
+        <viz:position x="26.642320338638527" y="-1.3569765984173618" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Oikarinen, Joona" />
           <attvalue for="1" value="matlu" />
@@ -339,7 +339,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="0.6506019601882932" y="14.373506416904558" z="0.0" />
+        <viz:position x="-6.4431224496140524" y="16.0168808136544" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Suha, Mikko" />
           <attvalue for="1" value="hum" />
@@ -355,7 +355,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-17.192888184756722" y="9.099146198433491" z="0.0" />
+        <viz:position x="-2.160258817806645" y="16.851118180543555" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jagne-Soreau, Maïmouna" />
           <attvalue for="1" value="hum" />
@@ -371,7 +371,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-19.26267475016265" y="32.85744424982808" z="0.0" />
+        <viz:position x="-8.58177923374999" y="35.98535869859686" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kondracka, Anna" />
           <attvalue for="1" value="hum" />
@@ -387,7 +387,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-38.1415987132504" y="25.268975270340626" z="0.0" />
+        <viz:position x="1.5928565891051794" y="44.04295806095196" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Raivio, Ville" />
           <attvalue for="1" value="hum" />
@@ -403,7 +403,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-12.221588937556117" y="17.89530139046923" z="0.0" />
+        <viz:position x="-25.379352277483047" y="6.560097142260661" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Alho, Erika" />
           <attvalue for="1" value="cond" />
@@ -419,7 +419,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-19.905536836088007" y="20.777105204445718" z="0.0" />
+        <viz:position x="-23.87564484055222" y="16.981264312813877" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Luokkanen, Sini" />
           <attvalue for="1" value="hum" />
@@ -435,7 +435,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-11.353124704977105" y="12.716474594713864" z="0.0" />
+        <viz:position x="-19.96928723078443" y="3.3418660065168915" z="0.0" />
         <attvalues>
           <attvalue for="0" value="de Leeuw van Weenen, Pia" />
           <attvalue for="1" value="hum" />
@@ -451,7 +451,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-12.199401526890588" y="30.452442448720003" z="0.0" />
+        <viz:position x="-30.007530407146138" y="15.822137509618509" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kavonius, Marjaana" />
           <attvalue for="1" value="cond" />
@@ -467,7 +467,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-22.962180057412453" y="11.456012444704722" z="0.0" />
+        <viz:position x="-26.255167957084936" y="15.296213151419092" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Heikkilä, Pia-Leena" />
           <attvalue for="1" value="hum" />
@@ -483,7 +483,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="0.4799645521164888" y="16.590614013579554" z="0.0" />
+        <viz:position x="-22.18854946474737" y="-2.728037216609258" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kaasinen, Miia" />
           <attvalue for="1" value="cond" />
@@ -499,7 +499,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="20.01648881248297" y="-22.765158920608094" z="0.0" />
+        <viz:position x="22.14121730435491" y="-20.201201830413307" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Alho, Markku" />
           <attvalue for="1" value="matlu" />
@@ -515,7 +515,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="16.326999594461096" y="-20.358402795771514" z="0.0" />
+        <viz:position x="22.46352665846626" y="-16.682469552491195" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kotipalo, Leo" />
           <attvalue for="1" value="matlu" />
@@ -531,7 +531,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="32.31357256837511" y="-25.981524558972673" z="0.0" />
+        <viz:position x="33.18246066465331" y="-23.42682686547257" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Räsänen, Juska" />
           <attvalue for="1" value="matlu" />
@@ -547,7 +547,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="24.516633395690704" y="-17.68476267738424" z="0.0" />
+        <viz:position x="18.997480416956922" y="-23.212629069726866" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ekblom, Madeleine" />
           <attvalue for="1" value="matlu" />
@@ -563,7 +563,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="17.85859370437791" y="-13.530617508290405" z="0.0" />
+        <viz:position x="10.93740609507819" y="-20.408761296140074" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kukkola, Johanna" />
           <attvalue for="1" value="matlu" />
@@ -579,7 +579,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="28.81354443630706" y="-14.248742701228373" z="0.0" />
+        <viz:position x="28.972384580677524" y="-13.190150024900424" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Corner, Joona" />
           <attvalue for="1" value="matlu" />
@@ -595,7 +595,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-45.14080037374157" y="10.498925611275324" z="0.0" />
+        <viz:position x="-18.1542637715841" y="40.204833928713114" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Apell, Mira" />
           <attvalue for="1" value="hum" />
@@ -611,7 +611,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-32.44125660561156" y="10.097109958606776" z="0.0" />
+        <viz:position x="-13.344034852301172" y="27.36602275731285" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hynninen, Niina" />
           <attvalue for="1" value="hum" />
@@ -627,7 +627,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-42.531936103047535" y="9.21953808753077" z="0.0" />
+        <viz:position x="-26.34322230912743" y="34.90769329599699" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Muilu, Roosa-Maria" />
           <attvalue for="1" value="hum" />
@@ -643,7 +643,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-30.09495484795368" y="4.196872666735767" z="0.0" />
+        <viz:position x="-11.886480882043497" y="24.569269306166046" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Pienimäki, Hanna-Mari" />
           <attvalue for="1" value="hum" />
@@ -659,7 +659,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-46.660725633056465" y="5.346362398969452" z="0.0" />
+        <viz:position x="-22.5813724928413" y="40.2109020283422" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Niskanen, Lauri A." />
           <attvalue for="1" value="hum" />
@@ -675,7 +675,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-34.31681704770812" y="15.369193172020212" z="0.0" />
+        <viz:position x="-4.5855066349799625" y="35.81964069596223" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Heikkinen, Elina" />
           <attvalue for="1" value="hum" />
@@ -691,7 +691,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="13.666115478584432" y="-51.64967338660731" z="0.0" />
+        <viz:position x="16.786656292578943" y="-50.01682765743695" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Auvinen, Vili-Veli" />
           <attvalue for="1" value="farm" />
@@ -707,7 +707,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="14.49813378169944" y="-49.39964411693465" z="0.0" />
+        <viz:position x="19.93631615803944" y="-46.35525617639313" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saarinen, Jukka" />
           <attvalue for="1" value="farm" />
@@ -723,7 +723,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="19.966976451172087" y="-54.65506628478379" z="0.0" />
+        <viz:position x="24.3638989722377" y="-51.97361765834169" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Merivaara, Arto" />
           <attvalue for="1" value="farm" />
@@ -739,7 +739,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="16.389942713831477" y="-46.82003751391514" z="0.0" />
+        <viz:position x="20.123075121221095" y="-44.03554486406434" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tavakoli, Shirin" />
           <attvalue for="1" value="farm" />
@@ -755,7 +755,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="14.854461480942572" y="-41.828673041334945" z="0.0" />
+        <viz:position x="18.953323881670446" y="-39.18490110386191" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sathyanarayanan, Gowtham" />
           <attvalue for="1" value="farm" />
@@ -771,7 +771,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="11.198822964255546" y="-36.12332888429432" z="0.0" />
+        <viz:position x="10.490761470994613" y="-37.15161679607351" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tuunainen, Johanna" />
           <attvalue for="1" value="farm" />
@@ -787,7 +787,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="24.44871399847862" y="-41.18157252694616" z="0.0" />
+        <viz:position x="22.074675837256244" y="-41.561856486016204" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Berg, Mika" />
           <attvalue for="1" value="matlu" />
@@ -803,7 +803,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="29.949288187300315" y="-43.66248759964888" z="0.0" />
+        <viz:position x="27.277826672279463" y="-43.3632268286143" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Gilbert-Girard, Shella" />
           <attvalue for="1" value="farm" />
@@ -819,7 +819,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="36.780263154720124" y="-39.85077995779399" z="0.0" />
+        <viz:position x="35.0860325034808" y="-39.31917822761963" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Roslund, Kajsa" />
           <attvalue for="1" value="matlu" />
@@ -835,7 +835,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="15.7256045175315" y="-36.090260900922566" z="0.0" />
+        <viz:position x="10.501588226678644" y="-39.69847905350768" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Johansson, Niklas" />
           <attvalue for="1" value="farm" />
@@ -851,7 +851,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="24.98007463769416" y="-28.597214096590267" z="0.0" />
+        <viz:position x="26.046644576235767" y="-26.702371114190615" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Myllys, Nanna" />
           <attvalue for="1" value="matlu" />
@@ -867,7 +867,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-0.7522672827905491" y="29.929816713351563" z="0.0" />
+        <viz:position x="-38.35841389575392" y="9.95146325878709" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Bergström, Karoliina" />
           <attvalue for="1" value="matlu" />
@@ -883,7 +883,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-0.24552780911405878" y="16.141282123268407" z="0.0" />
+        <viz:position x="-38.906893349113865" y="-4.144794068092773" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lehto, Satu" />
           <attvalue for="1" value="cond" />
@@ -899,7 +899,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-6.792636294009284" y="25.228680018184978" z="0.0" />
+        <viz:position x="-29.875447459817433" y="9.281290464624517" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kramer, Martin" />
           <attvalue for="1" value="cond" />
@@ -915,7 +915,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-7.503658097596584" y="35.876772336219815" z="0.0" />
+        <viz:position x="-39.00514329582286" y="18.74058480853836" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ikonen, Eeva-Kaarina" />
           <attvalue for="1" value="cond" />
@@ -931,7 +931,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-11.177974943934554" y="22.755706951414233" z="0.0" />
+        <viz:position x="-29.301164529253025" y="8.143454090439253" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Haapaniemi, Janni" />
           <attvalue for="1" value="cond" />
@@ -947,7 +947,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-1.2700655355169566" y="19.844297910639952" z="0.0" />
+        <viz:position x="-36.96449375266753" y="-0.3904355745391381" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lampi, Hanna" />
           <attvalue for="1" value="cond" />
@@ -963,7 +963,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="20.00936374429843" y="-37.79177166848602" z="0.0" />
+        <viz:position x="29.76287346835639" y="-29.875255876008268" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Bortolussi, Federica" />
           <attvalue for="1" value="matlu" />
@@ -979,7 +979,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="27.072560186743388" y="-39.33913328613485" z="0.0" />
+        <viz:position x="35.99313059238305" y="-32.691752438166276" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rautavirta, Juhana" />
           <attvalue for="1" value="matlu" />
@@ -995,7 +995,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="20.580988921075896" y="-28.458871308554208" z="0.0" />
+        <viz:position x="28.4893592928806" y="-20.87532746174935" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vuori, Mikko" />
           <attvalue for="1" value="matlu" />
@@ -1011,7 +1011,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="28.798373372647912" y="-35.22220430094208" z="0.0" />
+        <viz:position x="29.138928797347706" y="-36.765325190718535" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tanner, Timo" />
           <attvalue for="1" value="farm" />
@@ -1027,7 +1027,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="11.492827602019696" y="-22.72065857484693" z="0.0" />
+        <viz:position x="18.17704962450669" y="-16.55227012332175" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Havukainen, Joona" />
           <attvalue for="1" value="matlu" />
@@ -1043,7 +1043,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="20.454497749996488" y="-34.49717423217686" z="0.0" />
+        <viz:position x="26.5822196743718" y="-30.19360297664408" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lakshika, Palamakumbure" />
           <attvalue for="1" value="matlu" />
@@ -1059,7 +1059,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="41.800891259007834" y="-19.920609110617242" z="0.0" />
+        <viz:position x="42.381987444771966" y="-19.166911578909165" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lindholm, Viivi" />
           <attvalue for="1" value="bio" />
@@ -1075,7 +1075,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="44.74580936278835" y="-16.66842759173646" z="0.0" />
+        <viz:position x="44.671134335172006" y="-16.238294340935983" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Heiskanen, Lauri" />
           <attvalue for="1" value="matlu" />
@@ -1091,7 +1091,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="25.38351731434571" y="-15.037762718027636" z="0.0" />
+        <viz:position x="25.547090746372724" y="-12.686414744494712" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Folestad, Magdalena" />
           <attvalue for="1" value="matlu" />
@@ -1107,7 +1107,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="16.14493063441845" y="-14.00027119948126" z="0.0" />
+        <viz:position x="19.74273125090283" y="-9.78663847805613" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Korhonen, Hannele" />
           <attvalue for="1" value="matlu" />
@@ -1123,7 +1123,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="30.317849888029517" y="-22.87247170239565" z="0.0" />
+        <viz:position x="33.93176698664722" y="-19.283117561729572" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Koskentausta, Juho" />
           <attvalue for="1" value="matlu" />
@@ -1139,7 +1139,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-17.13903883250665" y="42.72950127666335" z="0.0" />
+        <viz:position x="-28.795000094483058" y="30.55158277172621" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Davidsen, Peter" />
           <attvalue for="1" value="hum" />
@@ -1155,7 +1155,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-9.574577107771793" y="30.905858320995083" z="0.0" />
+        <viz:position x="-24.750234480610743" y="19.478469914937858" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hämäläinen, Helena" />
           <attvalue for="1" value="cond" />
@@ -1171,7 +1171,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-16.892387696681112" y="23.858215682662284" z="0.0" />
+        <viz:position x="-28.97203387534945" y="13.753907595431155" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Haatainen, Outi" />
           <attvalue for="1" value="matlu" />
@@ -1187,7 +1187,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-15.874142044805836" y="32.91144775864298" z="0.0" />
+        <viz:position x="-37.70381954236085" y="13.895877521746817" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vilhunen, Elisa" />
           <attvalue for="1" value="cond" />
@@ -1203,7 +1203,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-7.704867353589405" y="6.770404200182356" z="0.0" />
+        <viz:position x="-16.726951171882448" y="-2.931229306323658" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sinisalo, Arttu" />
           <attvalue for="1" value="matlu" />
@@ -1219,7 +1219,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-13.476716303526176" y="9.446029519869834" z="0.0" />
+        <viz:position x="-18.20247642149061" y="2.567367448280114" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tiihonen, Viivi" />
           <attvalue for="1" value="matlu" />
@@ -1235,7 +1235,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="17.15135580178771" y="-34.236804724453314" z="0.0" />
+        <viz:position x="24.52963093334304" y="-29.75260584952798" z="0.0" />
         <attvalues>
           <attvalue for="0" value="De Meulder" />
           <attvalue for="1" value="matlu" />
@@ -1251,7 +1251,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="17.544341991418637" y="-29.002920167117" z="0.0" />
+        <viz:position x="28.005080542909607" y="-22.96934113304905" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Keitaanranta, Atte" />
           <attvalue for="1" value="matlu" />
@@ -1267,7 +1267,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="9.568660505743125" y="-40.079712846211436" z="0.0" />
+        <viz:position x="17.177459133306076" y="-34.676949359214156" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Otaki, Miho" />
           <attvalue for="1" value="matlu" />
@@ -1283,7 +1283,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="7.627388824692878" y="-18.28489513959215" z="0.0" />
+        <viz:position x="14.688310810475826" y="-13.023516369760756" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ojala, Juha" />
           <attvalue for="1" value="matlu" />
@@ -1299,7 +1299,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-48.85020610280446" y="5.335083924941415" z="0.0" />
+        <viz:position x="-19.893754425176763" y="42.035848193628375" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nurminen, Patrik" />
           <attvalue for="1" value="hum" />
@@ -1315,7 +1315,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-52.97171964975479" y="12.973269445267558" z="0.0" />
+        <viz:position x="-26.174938237464584" y="48.07577327047633" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nurminen, Niklas" />
           <attvalue for="1" value="hum" />
@@ -1331,7 +1331,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="28.831840203177507" y="-26.722748587376" z="0.0" />
+        <viz:position x="34.66764294333727" y="-21.51070011176421" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Grönroos, Sonja" />
           <attvalue for="1" value="matlu" />
@@ -1347,7 +1347,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="36.11526955222811" y="-22.250131602362888" z="0.0" />
+        <viz:position x="34.55018040765106" y="-25.75460032076675" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Westerlund, Antti" />
           <attvalue for="1" value="matlu" />
@@ -1363,7 +1363,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="25.902661354833327" y="-18.374945092941434" z="0.0" />
+        <viz:position x="26.76955624966301" y="-15.993984522141593" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Elgert, Christina" />
           <attvalue for="1" value="bio" />
@@ -1379,7 +1379,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="21.015957860979125" y="-30.19090006179086" z="0.0" />
+        <viz:position x="24.80398064699649" y="-26.219271523121478" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Papponen, Joni" />
           <attvalue for="1" value="matlu" />
@@ -1395,7 +1395,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="26.347954843368182" y="-33.694996490651484" z="0.0" />
+        <viz:position x="27.686968067787536" y="-32.43881619938102" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saarinen, Pia" />
           <attvalue for="1" value="bio" />
@@ -1411,7 +1411,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="20.851418261643147" y="-19.21554995096959" z="0.0" />
+        <viz:position x="31.925884852582847" y="-12.065490600690676" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mannerla, Miia" />
           <attvalue for="1" value="bio" />
@@ -1427,7 +1427,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="7.013454905146787" y="-3.475804019928646" z="0.0" />
+        <viz:position x="7.413122090674472" y="-2.8212377258905414" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Käyhkö, Janina" />
           <attvalue for="1" value="bio" />
@@ -1443,7 +1443,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="30.776931410789487" y="-7.398302125050722" z="0.0" />
+        <viz:position x="29.81559976812979" y="-7.7405445142299465" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Järvi, Jani" />
           <attvalue for="1" value="bio" />
@@ -1459,7 +1459,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="35.09678724369297" y="-39.47633425358731" z="0.0" />
+        <viz:position x="40.01501894170716" y="-37.47521968886382" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Elovaara, Samu" />
           <attvalue for="1" value="bio" />
@@ -1475,7 +1475,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="36.35400394334181" y="-25.8642425673212" z="0.0" />
+        <viz:position x="39.75768596991815" y="-23.323399529231654" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Eronen-Rasimus, Eeva" />
           <attvalue for="1" value="bio" />
@@ -1491,7 +1491,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="19.87805092420088" y="-43.752012368599566" z="0.0" />
+        <viz:position x="24.785091847601283" y="-41.450426142037344" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Paasinen Sohns, Aino" />
           <attvalue for="1" value="bio" />
@@ -1507,7 +1507,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="17.506145326367783" y="-44.02737828881293" z="0.0" />
+        <viz:position x="23.235058577411717" y="-39.94537428409725" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Piironen, Kati" />
           <attvalue for="1" value="farm" />
@@ -1523,7 +1523,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="27.469047660298312" y="-52.0541455057867" z="0.0" />
+        <viz:position x="30.266207851172993" y="-50.780593094964146" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tarvainen, Ilari" />
           <attvalue for="1" value="farm" />
@@ -1539,7 +1539,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-15.96300324353723" y="13.51475355738772" z="0.0" />
+        <viz:position x="-13.223457738857695" y="10.805804448046349" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Engren, Jan-Erik" />
           <attvalue for="1" value="hum" />
@@ -1555,7 +1555,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-7.789928874415394" y="20.895795523716572" z="0.0" />
+        <viz:position x="-29.018039477562613" y="2.1016784992404682" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saarinen, Auli" />
           <attvalue for="1" value="cond" />
@@ -1571,7 +1571,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-23.693945148401983" y="16.915798577546486" z="0.0" />
+        <viz:position x="-14.383882705689487" y="21.50050389726039" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Palkki, Teemu" />
           <attvalue for="1" value="hum" />
@@ -1587,7 +1587,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-8.71631785503296" y="16.31278265026042" z="0.0" />
+        <viz:position x="-26.31095342595794" y="-0.32871598749401365" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Niemi, Laura" />
           <attvalue for="1" value="cond" />
@@ -1603,7 +1603,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="5.083566328785462" y="25.9116624933933" z="0.0" />
+        <viz:position x="-23.399111918428606" y="-1.3834512524261293" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Eriksson, Camilla" />
           <attvalue for="1" value="cond" />
@@ -1619,7 +1619,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-0.9032032860302729" y="21.225825419789874" z="0.0" />
+        <viz:position x="-21.932862540154126" y="2.742718033382993" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Immonen, Waltteri" />
           <attvalue for="1" value="cond" />
@@ -1635,7 +1635,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-6.632696152276579" y="28.264832425444304" z="0.0" />
+        <viz:position x="-26.65848143766935" y="8.993698017785409" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Murto, Elisa" />
           <attvalue for="1" value="cond" />
@@ -1651,7 +1651,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-3.45941355392631" y="23.061256642304507" z="0.0" />
+        <viz:position x="-24.056280926340385" y="5.028527322495956" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Savolainen, Katri" />
           <attvalue for="1" value="cond" />
@@ -1667,7 +1667,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="9.005276258626589" y="10.797569642365136" z="0.0" />
+        <viz:position x="-4.444579807974535" y="0.11227683350215913" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tiihonen, Katariina" />
           <attvalue for="1" value="bio" />
@@ -1683,7 +1683,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="34.795221799995545" y="-15.17328121778333" z="0.0" />
+        <viz:position x="38.923314264832506" y="-12.010643213617028" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rintala, Janne-Markus" />
           <attvalue for="1" value="bio" />
@@ -1699,7 +1699,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="26.074662917184604" y="-21.622419299834064" z="0.0" />
+        <viz:position x="28.28460429888191" y="-17.86858396200543" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lehmusjärvi, Tuuli" />
           <attvalue for="1" value="matlu" />
@@ -1715,7 +1715,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-2.532977284911873" y="15.601309007816546" z="0.0" />
+        <viz:position x="-39.949051498045236" y="-5.681051857697359" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Eskelinen, Kristiina" />
           <attvalue for="1" value="cond" />
@@ -1731,7 +1731,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-1.6948448242555787" y="11.856256122515955" z="0.0" />
+        <viz:position x="-39.84514729812526" y="-8.53944191849137" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vermilä, Piret" />
           <attvalue for="1" value="cond" />
@@ -1747,7 +1747,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-5.895765641080866" y="14.172192846516054" z="0.0" />
+        <viz:position x="-35.28236531868804" y="-2.4740885855140897" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hautakangas, Merja" />
           <attvalue for="1" value="cond" />
@@ -1763,7 +1763,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-0.698019685203205" y="18.926651391887855" z="0.0" />
+        <viz:position x="-38.139499661403484" y="-1.015055360831417" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sairanen, Heidi" />
           <attvalue for="1" value="cond" />
@@ -1779,7 +1779,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-0.23108919900971014" y="11.585266907209814" z="0.0" />
+        <viz:position x="-31.100933910263016" y="-5.956627045643485" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nordström, Alexandra" />
           <attvalue for="1" value="cond" />
@@ -1795,7 +1795,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="41.5370029227665" y="-13.436705792083606" z="0.0" />
+        <viz:position x="42.85679592029022" y="-12.391456112748077" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Fabritius, Henna" />
           <attvalue for="1" value="bio" />
@@ -1811,7 +1811,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="39.44124729944343" y="-12.795315144854461" z="0.0" />
+        <viz:position x="40.94885773305069" y="-12.138452373874857" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kekkonen, Mari" />
           <attvalue for="1" value="bio" />
@@ -1827,7 +1827,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="35.207729423571784" y="-24.630904024959182" z="0.0" />
+        <viz:position x="35.940215187437026" y="-24.60373503130928" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nurmi, Marisofia" />
           <attvalue for="1" value="matlu" />
@@ -1843,7 +1843,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="43.2892479171739" y="-23.303456940160633" z="0.0" />
+        <viz:position x="46.7312356887491" y="-21.07894676405698" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kahma, Tuomas I." />
           <attvalue for="1" value="bio" />
@@ -1859,7 +1859,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="23.04122091941433" y="-23.45266873298265" z="0.0" />
+        <viz:position x="26.232352243536816" y="-19.75485125617849" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lauros, Johanna" />
           <attvalue for="1" value="matlu" />
@@ -1875,7 +1875,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="21.409191511031626" y="-14.911082618826574" z="0.0" />
+        <viz:position x="20.585109956728772" y="-14.555987753639773" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nordling, Kalle" />
           <attvalue for="1" value="matlu" />
@@ -1891,7 +1891,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="31.41532341225826" y="-33.998331408965996" z="0.0" />
+        <viz:position x="29.921111688434454" y="-34.1170883742358" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Franzon, Lauri" />
           <attvalue for="1" value="matlu" />
@@ -1907,7 +1907,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="25.314476957255916" y="-20.840800098666374" z="0.0" />
+        <viz:position x="24.032473685599" y="-21.438771169773382" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karvinen, Mikael" />
           <attvalue for="1" value="matlu" />
@@ -1923,7 +1923,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-6.569154158523386" y="23.353695020464098" z="0.0" />
+        <viz:position x="-33.48703367606765" y="0.18764971615978845" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Friberg, Kalervo" />
           <attvalue for="1" value="cond" />
@@ -1939,7 +1939,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-12.523963156116336" y="25.877715402235264" z="0.0" />
+        <viz:position x="-34.943866667022576" y="8.039166940110198" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Muinonen, Mari" />
           <attvalue for="1" value="cond" />
@@ -1955,7 +1955,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-14.971124383615223" y="26.008255555740163" z="0.0" />
+        <viz:position x="-32.72496518068118" y="11.454577228848606" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kopsa, Karoliina" />
           <attvalue for="1" value="hum" />
@@ -1971,7 +1971,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-8.71674487062352" y="23.975110522168812" z="0.0" />
+        <viz:position x="-33.88889085175031" y="3.5034890212947887" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mickelsson, Ritva" />
           <attvalue for="1" value="cond" />
@@ -1987,7 +1987,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="1.9357749463901675" y="19.47058046493564" z="0.0" />
+        <viz:position x="-32.52409552049401" y="-5.492711615536686" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Koivuhovi, Satu" />
           <attvalue for="1" value="cond" />
@@ -2003,7 +2003,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="16.935744972008127" y="0.3672606576484605" z="0.0" />
+        <viz:position x="12.767566188060666" y="-0.1892865522162679" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Fung, Pak Lun" />
           <attvalue for="1" value="matlu" />
@@ -2019,7 +2019,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="7.3583693975327895" y="25.52617630645998" z="0.0" />
+        <viz:position x="-11.363997433368173" y="15.418287054715455" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kuru, Saarajohanna" />
           <attvalue for="1" value="bio" />
@@ -2035,7 +2035,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-2.5954582296864053" y="7.012827684938429" z="0.0" />
+        <viz:position x="-7.809295875149308" y="4.927356342986582" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mäki, Tarja" />
           <attvalue for="1" value="cond" />
@@ -2051,7 +2051,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-2.7460268240817296" y="8.644769364462118" z="0.0" />
+        <viz:position x="9.447518757701996" y="16.224764351941364" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lukkari, Jasmin" />
           <attvalue for="1" value="hum" />
@@ -2067,7 +2067,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-22.936553224523394" y="6.9739148564799205" z="0.0" />
+        <viz:position x="-7.620833663857566" y="20.989609055622786" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Gärkman, Heidi" />
           <attvalue for="1" value="cond" />
@@ -2083,7 +2083,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-21.327548486312324" y="13.675189311283036" z="0.0" />
+        <viz:position x="-13.961828761786087" y="16.777916885029338" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Grünthal, Alva" />
           <attvalue for="1" value="cond" />
@@ -2099,7 +2099,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-2.6680915116865447" y="4.628116534403287" z="0.0" />
+        <viz:position x="-12.807460355880718" y="-1.2106882619589392" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Korhonen, Sirpa" />
           <attvalue for="1" value="hum" />
@@ -2115,7 +2115,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-41.662382729341324" y="19.441764885612596" z="0.0" />
+        <viz:position x="-5.701775211519742" y="40.420256759620386" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Koivusalo, Liisa" />
           <attvalue for="1" value="hum" />
@@ -2131,7 +2131,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-31.688940249644254" y="8.719153929898102" z="0.0" />
+        <viz:position x="-6.449654204716962" y="26.820065778176726" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Liimatta, Aatu" />
           <attvalue for="1" value="hum" />
@@ -2147,7 +2147,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-24.71572468483873" y="32.73814003457897" z="0.0" />
+        <viz:position x="-29.525112122232034" y="27.55536109414717" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Grünthal, Lauri" />
           <attvalue for="1" value="hum" />
@@ -2163,7 +2163,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-14.815828293867089" y="20.94844971775055" z="0.0" />
+        <viz:position x="-17.1135283106948" y="16.00789606652858" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kirjonen, Aino" />
           <attvalue for="1" value="hum" />
@@ -2179,7 +2179,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-13.109813416117754" y="23.611708407443746" z="0.0" />
+        <viz:position x="-28.63473320056407" y="11.648887117022092" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Luodeslampi, Juha" />
           <attvalue for="1" value="cond" />
@@ -2195,7 +2195,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="38.70304109364891" y="-33.57440538990583" z="0.0" />
+        <viz:position x="44.98453713521938" y="-29.03949564600393" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rautio, Annamari" />
           <attvalue for="1" value="matlu" />
@@ -2211,7 +2211,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="14.098453950449324" y="-30.258218574880857" z="0.0" />
+        <viz:position x="29.734224021092043" y="-17.99977338800839" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lindholm, Valtteri" />
           <attvalue for="1" value="matlu" />
@@ -2227,7 +2227,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-32.37534025675227" y="6.582556044657525" z="0.0" />
+        <viz:position x="-16.60976587094841" y="24.81537398281944" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Härmävaara, Hanna-Ilona" />
           <attvalue for="1" value="hum" />
@@ -2243,7 +2243,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-30.816550744717535" y="5.183177838866949" z="0.0" />
+        <viz:position x="-15.768371516784033" y="22.640201728740397" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ongley, Leena" />
           <attvalue for="1" value="hum" />
@@ -2259,7 +2259,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-33.06972424338365" y="0.16228423346311896" z="0.0" />
+        <viz:position x="-12.275966476926824" y="19.705342124648922" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Salo, Mirkka" />
           <attvalue for="1" value="hum" />
@@ -2275,7 +2275,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-20.366738144770054" y="25.51244856402532" z="0.0" />
+        <viz:position x="-12.702022868613716" y="23.439464168922285" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Haapala, Leevi" />
           <attvalue for="1" value="hum" />
@@ -2291,7 +2291,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-28.148274118626727" y="25.19066748674855" z="0.0" />
+        <viz:position x="-2.6510001190245425" y="34.084672166472934" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Wasastjerna-Toivanen, Tuija" />
           <attvalue for="1" value="hum" />
@@ -2307,7 +2307,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-23.197879179497946" y="32.318676932159576" z="0.0" />
+        <viz:position x="-12.965236406026307" y="32.96946737055385" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Pihlström, Meeri" />
           <attvalue for="1" value="hum" />
@@ -2323,7 +2323,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-22.895666483581394" y="38.783634054870184" z="0.0" />
+        <viz:position x="-4.555768759401051" y="41.17635702914429" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kivikoski, Karita" />
           <attvalue for="1" value="hum" />
@@ -2339,7 +2339,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-22.800007264267016" y="23.79640749245146" z="0.0" />
+        <viz:position x="-32.780775781214246" y="16.864943637317943" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Niemelä, Mikko" />
           <attvalue for="1" value="cond" />
@@ -2355,7 +2355,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-28.396624847153557" y="20.68799938310778" z="0.0" />
+        <viz:position x="-26.537747572077514" y="22.464473492757143" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hakamies, Inkeri" />
           <attvalue for="1" value="hum" />
@@ -2371,7 +2371,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-23.647438738915046" y="22.06282467936416" z="0.0" />
+        <viz:position x="-36.04736236873215" y="15.627086507867533" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rauhala, Anna" />
           <attvalue for="1" value="hum" />
@@ -2387,7 +2387,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-16.497340352589156" y="16.617421884389223" z="0.0" />
+        <viz:position x="-10.134468925144159" y="18.689925967233094" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vuorio, Lotta" />
           <attvalue for="1" value="hum" />
@@ -2403,7 +2403,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-18.456198436806584" y="35.020956880179334" z="0.0" />
+        <viz:position x="-24.47598078059979" y="27.927392499913623" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Raaska, Amanda" />
           <attvalue for="1" value="hum" />
@@ -2419,7 +2419,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-17.659044048949664" y="17.398753705997812" z="0.0" />
+        <viz:position x="-2.8032974197934712" y="21.748603439292967" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hakanen, Ville" />
           <attvalue for="1" value="hum" />
@@ -2435,7 +2435,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-29.789572692093323" y="24.97644672025671" z="0.0" />
+        <viz:position x="-4.511998676494704" y="33.79277102865896" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sainio, Jenny" />
           <attvalue for="1" value="hum" />
@@ -2451,7 +2451,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-10.910777099973679" y="4.990629364167995" z="0.0" />
+        <viz:position x="1.504846591315169" y="11.94708500284202" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hannu, Lea" />
           <attvalue for="1" value="hum" />
@@ -2467,7 +2467,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-35.08025991384722" y="28.477022650083168" z="0.0" />
+        <viz:position x="-24.936099502691413" y="34.231937607531634" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sievänen, Aino" />
           <attvalue for="1" value="hum" />
@@ -2483,7 +2483,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-31.066122174069232" y="12.867325332109699" z="0.0" />
+        <viz:position x="-8.168453703524651" y="27.852164685589674" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Manner, Pirjo" />
           <attvalue for="1" value="hum" />
@@ -2499,7 +2499,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-28.34201774335185" y="30.1806787127259" z="0.0" />
+        <viz:position x="-33.73895210222081" y="25.31110621985324" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Husgafvel, Ville" />
           <attvalue for="1" value="hum" />
@@ -2515,7 +2515,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-32.33667756237944" y="16.32973487093202" z="0.0" />
+        <viz:position x="-15.329075894173934" y="27.68821546693013" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kohonen, Siria" />
           <attvalue for="1" value="hum" />
@@ -2531,7 +2531,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-7.707470051252613" y="4.6381213533822345" z="0.0" />
+        <viz:position x="-0.03353516827681518" y="9.151897773995032" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Salminen, Janne" />
           <attvalue for="1" value="hum" />
@@ -2547,7 +2547,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-11.140736902895657" y="10.684701185286077" z="0.0" />
+        <viz:position x="8.028530722095795" y="19.278001693329657" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ruotanen, Charlotta" />
           <attvalue for="1" value="hum" />
@@ -2563,7 +2563,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-26.056583352759375" y="3.0196004743961837" z="0.0" />
+        <viz:position x="1.1440598748217519" y="23.653318729085207" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kouvola, Karolina" />
           <attvalue for="1" value="hum" />
@@ -2579,7 +2579,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-15.343293348350532" y="-10.176401792571136" z="0.0" />
+        <viz:position x="0.9700645798006345" y="2.8951108939549908" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Norri, Tuukka" />
           <attvalue for="1" value="matlu" />
@@ -2595,7 +2595,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="13.995039747338566" y="-21.036421570333218" z="0.0" />
+        <viz:position x="18.902968151239" y="-15.071185913665264" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Virkki, Anne" />
           <attvalue for="1" value="matlu" />
@@ -2611,7 +2611,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="3.7912003239122756" y="-23.492374629234224" z="0.0" />
+        <viz:position x="5.936943117545675" y="-22.29573666861771" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lotti, Mikko" />
           <attvalue for="1" value="matlu" />
@@ -2627,7 +2627,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="4.886608446042408" y="-19.86414149968807" z="0.0" />
+        <viz:position x="11.263222068572029" y="-14.05799260048077" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Joutsela, Aili" />
           <attvalue for="1" value="matlu" />
@@ -2643,7 +2643,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-39.65457304298779" y="7.454853570511194" z="0.0" />
+        <viz:position x="-12.823354528523833" y="34.723452666135906" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Yurayong, Chingduang" />
           <attvalue for="1" value="hum" />
@@ -2659,7 +2659,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-20.066960713187502" y="19.448163817944973" z="0.0" />
+        <viz:position x="-3.617686664412901" y="27.161870654102344" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Seitovirta, Robert" />
           <attvalue for="1" value="hum" />
@@ -2675,7 +2675,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-38.87619237141779" y="5.060306753711807" z="0.0" />
+        <viz:position x="-8.701140282440333" y="33.3137978687538" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Myllyneva, Meri" />
           <attvalue for="1" value="hum" />
@@ -2691,7 +2691,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-41.36758048367276" y="16.389470905746904" z="0.0" />
+        <viz:position x="0.9646182630801806" y="40.238467471054115" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hopponen, Saara" />
           <attvalue for="1" value="hum" />
@@ -2707,7 +2707,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="45.180924678966456" y="-33.52775331142862" z="0.0" />
+        <viz:position x="47.103541262807376" y="-33.28625251955373" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Heinonen, Iris" />
           <attvalue for="1" value="bio" />
@@ -2723,7 +2723,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="40.49954033896243" y="-23.968586827870926" z="0.0" />
+        <viz:position x="42.12962918639984" y="-23.413260145854345" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Robinson, Sinikka" />
           <attvalue for="1" value="bio" />
@@ -2739,7 +2739,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="29.113157925880877" y="-31.00942024732141" z="0.0" />
+        <viz:position x="32.150838959190764" y="-30.255914230418572" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hultman, Jenni" />
           <attvalue for="1" value="bio" />
@@ -2755,7 +2755,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="45.50570416950382" y="-28.17340625294643" z="0.0" />
+        <viz:position x="48.16071634252486" y="-25.81259273712596" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Åberg, Susanne" />
           <attvalue for="1" value="matlu" />
@@ -2771,7 +2771,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="39.98899012678785" y="-14.769777860610647" z="0.0" />
+        <viz:position x="36.91438658470159" y="-15.790176803178927" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Korkiakoski, Mika" />
           <attvalue for="1" value="matlu" />
@@ -2787,7 +2787,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="45.32354178307345" y="-22.42294754786957" z="0.0" />
+        <viz:position x="44.89291667037577" y="-24.19638490969474" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Riitakorpi, Johanna" />
           <attvalue for="1" value="bio" />
@@ -2803,7 +2803,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="4.518490057953496" y="-6.530844097118102" z="0.0" />
+        <viz:position x="-12.055937585528497" y="-17.92236233202134" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hellsten, Ted" />
           <attvalue for="1" value="hum" />
@@ -2819,7 +2819,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-8.743347275218829" y="-2.0086294954185937" z="0.0" />
+        <viz:position x="-11.321140137321509" y="-6.031373586667827" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Parkatti, Jarre Johan" />
           <attvalue for="1" value="cond" />
@@ -2835,7 +2835,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="8.583035062492678" y="-10.518310518127805" z="0.0" />
+        <viz:position x="-6.933390185359372" y="-22.228355905088677" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mäkelä, Felix" />
           <attvalue for="1" value="hum" />
@@ -2851,7 +2851,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="3.9730354799177254" y="19.51279044613447" z="0.0" />
+        <viz:position x="-14.511537311736081" y="6.536251300856109" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Heikkinen, Markus" />
           <attvalue for="1" value="cond" />
@@ -2867,7 +2867,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-14.749509816559161" y="33.38071923128168" z="0.0" />
+        <viz:position x="-20.507844429283967" y="26.57707884596047" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saranpää, Ella" />
           <attvalue for="1" value="cond" />
@@ -2883,7 +2883,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-0.04010064080653308" y="26.120748303103635" z="0.0" />
+        <viz:position x="-31.887837653442748" y="6.49553813084137" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tukiainen, Miili" />
           <attvalue for="1" value="cond" />
@@ -2899,7 +2899,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="9.696478815126463" y="-11.723967423735376" z="0.0" />
+        <viz:position x="8.790588817295651" y="-11.339810170908454" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hippeläinen, Antti" />
           <attvalue for="1" value="matlu" />
@@ -2915,7 +2915,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="22.417515045825464" y="-16.62242688331078" z="0.0" />
+        <viz:position x="19.561369718284094" y="-19.17731028468913" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Korhonen, Teo Ilmari" />
           <attvalue for="1" value="matlu" />
@@ -2931,7 +2931,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="0.5152651505438235" y="-21.10956717084952" z="0.0" />
+        <viz:position x="25.102578720407635" y="-2.069358068199238" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Koivurova, Antti" />
           <attvalue for="1" value="matlu" />
@@ -2947,7 +2947,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="6.43201058097431" y="-16.018140127032567" z="0.0" />
+        <viz:position x="6.450962258532983" y="-16.311072651996664" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Holopainen, Markus" />
           <attvalue for="1" value="matlu" />
@@ -2963,7 +2963,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="16.747975115178594" y="-22.922944753802525" z="0.0" />
+        <viz:position x="8.616949182765344" y="-31.140164735575972" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hippi, Marjo" />
           <attvalue for="1" value="matlu" />
@@ -2979,7 +2979,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="5.827727051220689" y="-26.345153046926388" z="0.0" />
+        <viz:position x="1.988305031497009" y="-28.793480740360604" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saarukka, Laura" />
           <attvalue for="1" value="farm" />
@@ -2995,7 +2995,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="18.301279805305448" y="-9.693778638935125" z="0.0" />
+        <viz:position x="12.001415608992918" y="-16.04712660662325" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Médus, Erika" />
           <attvalue for="1" value="matlu" />
@@ -3011,7 +3011,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="28.313334228922592" y="-17.912755439006137" z="0.0" />
+        <viz:position x="19.883458265492237" y="-26.89608096574045" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Leppänen, Leena" />
           <attvalue for="1" value="matlu" />
@@ -3027,7 +3027,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-10.511427147573867" y="-21.663575763905747" z="0.0" />
+        <viz:position x="18.538215312003086" y="0.7558060845207414" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tamminen, Eeli" />
           <attvalue for="1" value="matlu" />
@@ -3043,7 +3043,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-1.5373582986808185" y="-9.169938932763515" z="0.0" />
+        <viz:position x="21.0541356380066" y="5.217023916330901" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Koukkari, Tuomas" />
           <attvalue for="1" value="hum" />
@@ -3059,7 +3059,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-6.422015330932419" y="44.313389658889655" z="0.0" />
+        <viz:position x="-13.590288527108735" y="37.53419394219566" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Honkanen, Henrik" />
           <attvalue for="1" value="hum" />
@@ -3075,7 +3075,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-13.16103469423195" y="50.38759576852995" z="0.0" />
+        <viz:position x="-11.069419304340045" y="47.16034700718452" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Pitkänen, Henrik" />
           <attvalue for="1" value="hum" />
@@ -3091,7 +3091,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="7.310671746709999" y="34.453135956019345" z="0.0" />
+        <viz:position x="-41.621693785934646" y="14.939147456339393" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Holkkola, Matilda" />
           <attvalue for="1" value="matlu" />
@@ -3107,7 +3107,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="3.56744128627643" y="41.22262524621521" z="0.0" />
+        <viz:position x="-31.802656407476697" y="24.239941807247963" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Laine, Eevi" />
           <attvalue for="1" value="hum" />
@@ -3123,7 +3123,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="0.4309736923104803" y="34.49243085073454" z="0.0" />
+        <viz:position x="-35.66124112304679" y="20.515387193338594" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Virtanen, Pirjo Kristiina" />
           <attvalue for="1" value="hum" />
@@ -3139,7 +3139,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="3.6345121691311135" y="31.75827598822079" z="0.0" />
+        <viz:position x="-29.656100894611694" y="17.845857515576096" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Merisalo, Maria" />
           <attvalue for="1" value="matlu" />
@@ -3155,7 +3155,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-9.46854913795444" y="-8.397708792491505" z="0.0" />
+        <viz:position x="2.109788963099073" y="-1.0400193767454613" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lehtisaari-Pousar, Saala" />
           <attvalue for="1" value="cond" />
@@ -3171,7 +3171,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-0.8929514618376525" y="-2.0952915671346664" z="0.0" />
+        <viz:position x="-6.349719650523229" y="-7.671633706873244" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nissilä, Viivi" />
           <attvalue for="1" value="matlu" />
@@ -3187,7 +3187,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="13.12285573551441" y="-7.426831771298005" z="0.0" />
+        <viz:position x="11.595768636247216" y="-6.870284711346473" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Koski, Aapo" />
           <attvalue for="1" value="matlu" />
@@ -3203,7 +3203,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="17.75538570325513" y="-57.97508973613923" z="0.0" />
+        <viz:position x="24.93842016651808" y="-55.15360147347771" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Holopainen, Minna" />
           <attvalue for="1" value="bio" />
@@ -3219,7 +3219,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="8.938426799894742" y="-49.55894393948988" z="0.0" />
+        <viz:position x="18.538231765484134" y="-43.3179400737566" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Zhang, Pei" />
           <attvalue for="1" value="farm" />
@@ -3235,7 +3235,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="10.726868476549436" y="-50.47124849503712" z="0.0" />
+        <viz:position x="17.90399165154654" y="-48.062739638503416" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Zini, Jacopo" />
           <attvalue for="1" value="farm" />
@@ -3251,7 +3251,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-0.1751912829297462" y="48.29809224980182" z="0.0" />
+        <viz:position x="-34.4414207470227" y="32.48005082242684" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lepistö, Essi" />
           <attvalue for="1" value="hum" />
@@ -3267,7 +3267,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-13.207926736432253" y="38.07284828037641" z="0.0" />
+        <viz:position x="-27.019952965012312" y="24.92440455669538" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Poropudas, Salla" />
           <attvalue for="1" value="cond" />
@@ -3283,7 +3283,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-9.730716771321214" y="39.58484364116933" z="0.0" />
+        <viz:position x="-1.8321612766210773" y="40.47082280094408" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jalonen, Jasmina" />
           <attvalue for="1" value="hum" />
@@ -3299,7 +3299,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-11.594862788471207" y="45.045645217932204" z="0.0" />
+        <viz:position x="-20.33674728932499" y="36.2324769631285" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mäkilä, Sasha" />
           <attvalue for="1" value="hum" />
@@ -3315,7 +3315,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-25.909883572300046" y="4.433613275919843" z="0.0" />
+        <viz:position x="-4.2354342144093495" y="20.436355070509986" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Huttunen, Viivi" />
           <attvalue for="1" value="hum" />
@@ -3331,7 +3331,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-2.3524428754608837" y="24.84316701317352" z="0.0" />
+        <viz:position x="-26.076223601306587" y="2.953586581489163" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lehtonen, Anna" />
           <attvalue for="1" value="cond" />
@@ -3347,7 +3347,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="20.73001445718329" y="-25.322069694082444" z="0.0" />
+        <viz:position x="29.493676622397114" y="-15.577536965113412" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hyvönen, Jere" />
           <attvalue for="1" value="matlu" />
@@ -3363,7 +3363,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="21.901868519493288" y="-35.715663156006435" z="0.0" />
+        <viz:position x="32.32329427079328" y="-25.913826987107676" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mäkinen, Joni" />
           <attvalue for="1" value="matlu" />
@@ -3379,7 +3379,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="15.197662650493463" y="-37.84709570503066" z="0.0" />
+        <viz:position x="23.767846299236783" y="-31.677043579398358" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saressalo, Anton" />
           <attvalue for="1" value="matlu" />
@@ -3395,7 +3395,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-1.7624707859302386" y="43.1403912249041" z="0.0" />
+        <viz:position x="-42.575898876552905" y="22.6709567549862" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hyödynmaa, Mia" />
           <attvalue for="1" value="matlu" />
@@ -3411,7 +3411,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-11.434487337779023" y="35.638507859313385" z="0.0" />
+        <viz:position x="-45.500525184828184" y="11.860113028299544" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Krokfors, Frank" />
           <attvalue for="1" value="hum" />
@@ -3427,7 +3427,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="2.4624036167667254" y="25.360056924554335" z="0.0" />
+        <viz:position x="-25.6062500912877" y="11.20855585945703" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saarilahti, Marja" />
           <attvalue for="1" value="cond" />
@@ -3443,7 +3443,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-8.084798871846933" y="48.58618084634287" z="0.0" />
+        <viz:position x="-37.28937190990914" y="33.85450095308518" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Savolainen, Eeva-Miina" />
           <attvalue for="1" value="hum" />
@@ -3459,7 +3459,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="1.9027480151507379" y="-26.450703812534716" z="0.0" />
+        <viz:position x="9.108286389964457" y="-20.286874960655126" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Hätönen, Seppo" />
           <attvalue for="1" value="matlu" />
@@ -3475,7 +3475,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="10.111590155270443" y="-29.25728743723091" z="0.0" />
+        <viz:position x="14.36774747720384" y="-25.924046385249017" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Mohan, Nitinder" />
           <attvalue for="1" value="matlu" />
@@ -3491,7 +3491,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="34.10976946439605" y="-41.71491837080817" z="0.0" />
+        <viz:position x="37.60725998200067" y="-41.17882479766188" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Idänheimo, Niina" />
           <attvalue for="1" value="bio" />
@@ -3507,7 +3507,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="36.77418553186465" y="-31.723910812339646" z="0.0" />
+        <viz:position x="38.41531864400161" y="-31.646484923335194" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kalliola, Maria" />
           <attvalue for="1" value="bio" />
@@ -3523,7 +3523,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-24.91509444217483" y="-1.0719936628184499" z="0.0" />
+        <viz:position x="4.574128205746149" y="17.830792612683712" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ilomäki, Wiivi" />
           <attvalue for="1" value="cond" />
@@ -3539,7 +3539,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-27.121980581191956" y="18.368318821658818" z="0.0" />
+        <viz:position x="-11.23708411297914" y="25.951813176076964" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Haapoja, Heidi" />
           <attvalue for="1" value="hum" />
@@ -3555,7 +3555,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-15.543177576677975" y="2.877165103314937" z="0.0" />
+        <viz:position x="2.784650824667206" y="17.438944956944198" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kanner, Antti" />
           <attvalue for="1" value="hum" />
@@ -3571,7 +3571,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-28.02836605368297" y="33.73456683187961" z="0.0" />
+        <viz:position x="-18.229033566828804" y="36.57817871229888" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karlsson, Jonni" />
           <attvalue for="1" value="hum" />
@@ -3587,7 +3587,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-11.108021448166348" y="28.319818067650814" z="0.0" />
+        <viz:position x="-6.894768108628951" y="29.116755476538188" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rönkä, Minna" />
           <attvalue for="1" value="hum" />
@@ -3603,7 +3603,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-5.13338618546202" y="24.500550600846395" z="0.0" />
+        <viz:position x="-32.18954785417488" y="3.058204722302706" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vuorinen, Kaisa" />
           <attvalue for="1" value="cond" />
@@ -3619,7 +3619,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="25.683504522156316" y="11.37227852328496" z="0.0" />
+        <viz:position x="23.287715754709247" y="12.635302713553356" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jalkanen, Joel" />
           <attvalue for="1" value="matlu" />
@@ -3635,7 +3635,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-17.70779932864202" y="3.674598865579849" z="0.0" />
+        <viz:position x="-8.507272429941635" y="12.301261116961665" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vasama, Elli Noora" />
           <attvalue for="1" value="hum" />
@@ -3651,7 +3651,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-18.529170225051754" y="51.66540400750299" z="0.0" />
+        <viz:position x="-2.5429731424163244" y="53.83664464490203" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Soikkeli, Mikko" />
           <attvalue for="1" value="hum" />
@@ -3667,7 +3667,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="2.1069467825278183" y="1.0198517941511935" z="0.0" />
+        <viz:position x="18.12927225052284" y="13.212385754675637" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jelin, Hanna" />
           <attvalue for="1" value="hum" />
@@ -3683,7 +3683,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="13.066257633201477" y="-46.37808144407721" z="0.0" />
+        <viz:position x="14.865265885037163" y="-45.928020606306994" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kiiski, Iiro" />
           <attvalue for="1" value="farm" />
@@ -3699,7 +3699,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="22.306190249143523" y="-4.813752068334368" z="0.0" />
+        <viz:position x="3.8981213745992878" y="-18.87014988246091" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vaahtera, Maria" />
           <attvalue for="1" value="bio" />
@@ -3715,7 +3715,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="52.12244879105565" y="-100.0" z="0.0" />
+        <viz:position x="55.29892360130141" y="-100.0" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karhinen, Leena" />
           <attvalue for="1" value="bio" />
@@ -3731,7 +3731,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="48.471539154918005" y="-92.94380770087066" z="0.0" />
+        <viz:position x="51.59777090866253" y="-92.74972930098596" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Paunola, Eija" />
           <attvalue for="1" value="bio" />
@@ -3747,7 +3747,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="28.888538762929905" y="-42.04005374769132" z="0.0" />
+        <viz:position x="36.04539005153816" y="-37.055691676442834" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jortikka, Santeri" />
           <attvalue for="1" value="matlu" />
@@ -3763,7 +3763,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="23.414531946786056" y="-48.57131893693405" z="0.0" />
+        <viz:position x="31.402944991778448" y="-43.76768077761528" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lampuoti, Jarkko" />
           <attvalue for="1" value="matlu" />
@@ -3779,7 +3779,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-51.64806446777862" y="19.43679932730249" z="0.0" />
+        <viz:position x="-22.772730031844745" y="50.4509097835699" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jouhki, Mia" />
           <attvalue for="1" value="hum" />
@@ -3795,7 +3795,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-40.250663420551824" y="27.055388697876754" z="0.0" />
+        <viz:position x="-16.80078371463096" y="44.78160166011693" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Juntunen, Reetta" />
           <attvalue for="1" value="hum" />
@@ -3811,7 +3811,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-43.59906365162214" y="18.643899733768382" z="0.0" />
+        <viz:position x="-13.496849707596537" y="42.47352646980059" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Salmi, Aurora" />
           <attvalue for="1" value="hum" />
@@ -3827,7 +3827,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-14.76702400373264" y="-7.868980384834573" z="0.0" />
+        <viz:position x="5.517482982505896" y="5.538517920376966" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nikula, Ottilia" />
           <attvalue for="1" value="hum" />
@@ -3843,7 +3843,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-32.9747787166965" y="24.252600417494396" z="0.0" />
+        <viz:position x="-0.2345001794977296" y="38.19163450945437" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ekman, Satu" />
           <attvalue for="1" value="hum" />
@@ -3859,7 +3859,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="10.20410278888916" y="-0.21189295079794232" z="0.0" />
+        <viz:position x="0.7308199695555444" y="-7.647074652839901" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Jurgilevich, Alexandra" />
           <attvalue for="1" value="bio" />
@@ -3875,7 +3875,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-5.153913080089693" y="-19.10073737782331" z="0.0" />
+        <viz:position x="-16.56340137818796" y="-28.004945226053678" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kallio, Sonja" />
           <attvalue for="1" value="farm" />
@@ -3891,7 +3891,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="2.5333979604299066" y="10.488174783254582" z="0.0" />
+        <viz:position x="-15.791905568496418" y="-5.122336869392446" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Pyykkö, Anu" />
           <attvalue for="1" value="cond" />
@@ -3907,7 +3907,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-10.464624985223617" y="26.831480694633868" z="0.0" />
+        <viz:position x="-27.823477306255285" y="10.600920001003256" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Ryökkynen, Sanna" />
           <attvalue for="1" value="cond" />
@@ -3923,7 +3923,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="48.73222855119126" y="-24.367163527700182" z="0.0" />
+        <viz:position x="50.309206030017684" y="-24.69872582838037" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karjalainen, Miina" />
           <attvalue for="1" value="bio" />
@@ -3939,7 +3939,7 @@
         <viz:color r="126" g="190" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="49.781941736156924" y="-34.52882918609681" z="0.0" />
+        <viz:position x="53.963485111463015" y="-32.012026315582894" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Näkki, Pinja" />
           <attvalue for="1" value="bio" />
@@ -3955,7 +3955,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-5.347207998859531" y="-24.046168938732677" z="0.0" />
+        <viz:position x="-15.20763649084948" y="-32.34626200296374" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kvarnström, Kirsi" />
           <attvalue for="1" value="farm" />
@@ -3971,7 +3971,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-7.134672536538425" y="-27.929600025724877" z="0.0" />
+        <viz:position x="-13.648461921009925" y="-35.180734486690724" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kari, Heini" />
           <attvalue for="1" value="farm" />
@@ -3987,7 +3987,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-4.732614434062798" y="-22.734586895157495" z="0.0" />
+        <viz:position x="-13.183352252725586" y="-30.838008196951023" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Schepel, Lotta" />
           <attvalue for="1" value="farm" />
@@ -4003,7 +4003,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-7.739269170128718" y="-22.437973475112397" z="0.0" />
+        <viz:position x="-13.788511863503288" y="-27.69371117317787" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tolonen, Hanna" />
           <attvalue for="1" value="farm" />
@@ -4019,7 +4019,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-4.467795571265978" y="-3.7691935656177122" z="0.0" />
+        <viz:position x="-28.485631614887552" y="-19.017701759117493" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rautamo, Maria" />
           <attvalue for="1" value="farm" />
@@ -4035,7 +4035,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-6.863726048177505" y="-14.891294249012384" z="0.0" />
+        <viz:position x="-0.5167006623102256" y="-11.719712493087982" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kalliokoski, Timo" />
           <attvalue for="1" value="hum" />
@@ -4051,7 +4051,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-18.297952423210347" y="7.110316301121494" z="0.0" />
+        <viz:position x="-5.053665554447784" y="14.776762853606332" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kuosmanen, Sonja" />
           <attvalue for="1" value="hum" />
@@ -4067,7 +4067,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-10.479524394358114" y="7.328123538761508" z="0.0" />
+        <viz:position x="-11.861024139313336" y="8.448074524272904" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Poutanen, Heidi" />
           <attvalue for="1" value="hum" />
@@ -4083,7 +4083,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-22.42564180843032" y="-0.10689612081828195" z="0.0" />
+        <viz:position x="-5.7419782532867645" y="12.29327996351128" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Leppämäki, Tatu" />
           <attvalue for="1" value="matlu" />
@@ -4099,7 +4099,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="13.99240872760349" y="-18.300525513171447" z="0.0" />
+        <viz:position x="11.177168894783222" y="-22.31334623482537" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Paajanen, Santeri" />
           <attvalue for="1" value="matlu" />
@@ -4115,7 +4115,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="8.7101834698921" y="23.22075680438413" z="0.0" />
+        <viz:position x="8.209937568514887" y="23.30617776122553" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kangaskesti, Janne" />
           <attvalue for="1" value="hum" />
@@ -4131,7 +4131,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-25.374683954406123" y="12.273695987820961" z="0.0" />
+        <viz:position x="-18.738990909378465" y="19.005156069961256" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Marjokorpi, Jenni" />
           <attvalue for="1" value="cond" />
@@ -4147,7 +4147,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-45.750398619912914" y="23.861261733963467" z="0.0" />
+        <viz:position x="-19.08299821267927" y="45.850943854805784" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karanto, Anu" />
           <attvalue for="1" value="hum" />
@@ -4163,7 +4163,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-5.577358768739243" y="16.891934951865434" z="0.0" />
+        <viz:position x="-38.69877767650462" y="1.7601154915317077" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karlsson, Jessica" />
           <attvalue for="1" value="cond" />
@@ -4179,7 +4179,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-36.1024162675099" y="2.7444768108202533" z="0.0" />
+        <viz:position x="-0.27529843614011124" y="29.377883484759714" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Karlsson, Tuukka" />
           <attvalue for="1" value="hum" />
@@ -4195,7 +4195,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-20.174084330213873" y="-0.49904565369409176" z="0.0" />
+        <viz:position x="-2.0579951047247125" y="13.848295526225455" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kopio, Ville" />
           <attvalue for="1" value="matlu" />
@@ -4211,7 +4211,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="12.086793020130616" y="-32.080098143665495" z="0.0" />
+        <viz:position x="22.34568305835048" y="-24.649729359536313" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kimari, Jyri" />
           <attvalue for="1" value="matlu" />
@@ -4227,7 +4227,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="42.61634999525332" y="-12.219381246098706" z="0.0" />
+        <viz:position x="41.91592689681986" y="-9.871352666862267" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kivikko, Tommi" />
           <attvalue for="1" value="matlu" />
@@ -4243,7 +4243,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="47.105706637163784" y="-25.857646159158364" z="0.0" />
+        <viz:position x="49.08222719319531" y="-22.436967641658526" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Åberg, Annika" />
           <attvalue for="1" value="matlu" />
@@ -4259,7 +4259,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-23.923096180387795" y="30.56182134176801" z="0.0" />
+        <viz:position x="-33.48615686214236" y="20.50016249369911" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Silvonen, Viliina" />
           <attvalue for="1" value="hum" />
@@ -4275,7 +4275,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-5.117056882924154" y="46.77674009212104" z="0.0" />
+        <viz:position x="-30.13729216947447" y="34.080716976748974" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sairanen, Eetu" />
           <attvalue for="1" value="hum" />
@@ -4291,7 +4291,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-21.54725477221534" y="18.856130730085667" z="0.0" />
+        <viz:position x="-31.901431217073917" y="13.993231821769236" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kuusimäki, Anne-Mari" />
           <attvalue for="1" value="cond" />
@@ -4307,7 +4307,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="18.251971999843704" y="-24.47443773872241" z="0.0" />
+        <viz:position x="15.288649950112337" y="-28.606048882119705" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tuomola, Laura" />
           <attvalue for="1" value="matlu" />
@@ -4323,7 +4323,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="6.410939776776603" y="-7.311303244050353" z="0.0" />
+        <viz:position x="16.953042305567546" y="-1.4652839081852629" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Toivonen, Tuomas" />
           <attvalue for="1" value="matlu" />
@@ -4339,7 +4339,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-22.401373192518516" y="15.74551605479677" z="0.0" />
+        <viz:position x="7.965726718716751" y="30.35934875740717" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Norja, Sara" />
           <attvalue for="1" value="hum" />
@@ -4355,7 +4355,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="4.772583554452881" y="-31.15734894070345" z="0.0" />
+        <viz:position x="8.887804722656675" y="-26.87901492394683" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kuusela, Linda" />
           <attvalue for="1" value="matlu" />
@@ -4371,7 +4371,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-5.091983459361348" y="3.982459310455676" z="0.0" />
+        <viz:position x="-9.305674624781982" y="1.7001787754983806" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Kärki, Arto" />
           <attvalue for="1" value="matlu" />
@@ -4387,7 +4387,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="11.224490422036295" y="5.669159338278453" z="0.0" />
+        <viz:position x="-3.454782797032544" y="-7.1099371348643094" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Veijonaho, Salla" />
           <attvalue for="1" value="cond" />
@@ -4403,7 +4403,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-4.191253893165325" y="32.96141835411563" z="0.0" />
+        <viz:position x="-21.819134779874172" y="23.177624806954714" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Weiland-Särmälä, Katja" />
           <attvalue for="1" value="hum" />
@@ -4419,7 +4419,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-5.273469673445365" y="-8.758988303144829" z="0.0" />
+        <viz:position x="-1.0320459733066794" y="-5.232065380460393" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Paloviita, Miliza" />
           <attvalue for="1" value="cond" />
@@ -4435,7 +4435,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-2.903765897064748" y="34.9201985383301" z="0.0" />
+        <viz:position x="-40.08752843643709" y="5.0246049357133185" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Seppänen, Sirke" />
           <attvalue for="1" value="cond" />
@@ -4451,7 +4451,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-24.180977770807473" y="26.560645542898246" z="0.0" />
+        <viz:position x="-22.44963490302915" y="32.8051279016315" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Leiviskä, Oona" />
           <attvalue for="1" value="hum" />
@@ -4467,7 +4467,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="20.668881581226167" y="-21.10959553204393" z="0.0" />
+        <viz:position x="19.02724013337187" y="-21.671927940588493" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tiira, Jussi" />
           <attvalue for="1" value="matlu" />
@@ -4483,7 +4483,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="19.443340860443076" y="-32.44807688475046" z="0.0" />
+        <viz:position x="22.469953462904193" y="-29.226446364134233" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Steenari, Jussi" />
           <attvalue for="1" value="matlu" />
@@ -4499,7 +4499,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="21.093489093949792" y="-49.65075240921589" z="0.0" />
+        <viz:position x="30.053465184566274" y="-45.8741251327705" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Multia, Evgen" />
           <attvalue for="1" value="matlu" />
@@ -4515,7 +4515,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="0.6769659112255176" y="-4.743070594423828" z="0.0" />
+        <viz:position x="-10.692197329594283" y="-10.281498964985499" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Selin, Sten" />
           <attvalue for="1" value="hum" />
@@ -4531,7 +4531,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-11.866032304278226" y="4.5606927380667415" z="0.0" />
+        <viz:position x="-17.638068975435473" y="-0.14952387779765258" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Veteli, Peitsa" />
           <attvalue for="1" value="matlu" />
@@ -4547,7 +4547,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-19.18183000949974" y="23.365234868792957" z="0.0" />
+        <viz:position x="-16.728729887612612" y="18.378253860495995" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sipovaara, Karoliina" />
           <attvalue for="1" value="hum" />
@@ -4563,7 +4563,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-18.858542828258994" y="40.555066860967216" z="0.0" />
+        <viz:position x="-3.0281646723185713" y="44.69141084458757" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nikander, Noora" />
           <attvalue for="1" value="hum" />
@@ -4579,7 +4579,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-3.0713188219431817" y="27.820746396398576" z="0.0" />
+        <viz:position x="-35.342360362433006" y="1.6436470805573402" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Närhi, Leena" />
           <attvalue for="1" value="cond" />
@@ -4595,7 +4595,7 @@
         <viz:color r="238" g="213" b="39" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-1.174262709098638" y="13.084570085021744" z="0.0" />
+        <viz:position x="-28.32560156632743" y="-9.742794087227116" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Rawlings, Anna" />
           <attvalue for="1" value="cond" />
@@ -4611,7 +4611,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="4.6977062142262165" y="-13.544150328800693" z="0.0" />
+        <viz:position x="-4.4395996961735396" y="-22.73633131301029" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Oinio, Ville" />
           <attvalue for="1" value="farm" />
@@ -4627,7 +4627,7 @@
         <viz:color r="106" g="185" b="155" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="7.720596119097137" y="-31.70569192730552" z="0.0" />
+        <viz:position x="2.5415023682349998" y="-36.8535067150533" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Renko, Juho-Matti" />
           <attvalue for="1" value="farm" />
@@ -4643,7 +4643,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="6.919192915775452" y="-40.43017057232502" z="0.0" />
+        <viz:position x="18.833250171187725" y="-34.11717637037055" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Lasonen, Valtteri" />
           <attvalue for="1" value="matlu" />
@@ -4659,7 +4659,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="24.130035652502258" y="-32.605405754998536" z="0.0" />
+        <viz:position x="30.135430202619656" y="-26.403575672661916" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Siltala, Lauri" />
           <attvalue for="1" value="matlu" />
@@ -4675,7 +4675,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="0.8202606717028219" y="0.5046634424717382" z="0.0" />
+        <viz:position x="8.176883740576244" y="8.436333597796105" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Palo-oja, Vivian" />
           <attvalue for="1" value="matlu" />
@@ -4691,7 +4691,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="25.231919289503264" y="-1.6741051403822105" z="0.0" />
+        <viz:position x="29.33083066749214" y="0.25541238286036205" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saari, Nelli-Johanna" />
           <attvalue for="1" value="hum" />
@@ -4707,7 +4707,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="9.006868469219933" y="13.74318643820198" z="0.0" />
+        <viz:position x="15.843236986187973" y="16.506071329019182" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Wilskman, Juho" />
           <attvalue for="1" value="hum" />
@@ -4723,7 +4723,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-7.486786780169314" y="17.621993015254613" z="0.0" />
+        <viz:position x="-18.335228498098864" y="8.864544018759531" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Sairanen, Maria" />
           <attvalue for="1" value="hum" />
@@ -4739,7 +4739,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="5.567137258329433" y="40.75042051095848" z="0.0" />
+        <viz:position x="-39.02892244746908" y="22.44088958005416" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Saukkola, Mirva" />
           <attvalue for="1" value="hum" />
@@ -4755,7 +4755,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="12.081466895293596" y="10.48018414197028" z="0.0" />
+        <viz:position x="-17.16215530698281" y="-11.543072451041635" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Seppä, Anita" />
           <attvalue for="1" value="hum" />
@@ -4771,7 +4771,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="2.0989502109690994" y="-33.00339244938066" z="0.0" />
+        <viz:position x="15.304327545647467" y="-22.134232433701353" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Siipola, Ossi" />
           <attvalue for="1" value="matlu" />
@@ -4787,7 +4787,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="9.685661598716639" y="-19.65796023565988" z="0.0" />
+        <viz:position x="6.4903744633882186" y="-24.526077540136704" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Siljamo, Niilo" />
           <attvalue for="1" value="matlu" />
@@ -4803,7 +4803,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.1" />
         <viz:shape value="square" />
-        <viz:position x="-16.719260401941646" y="54.03058550797157" z="0.0" />
+        <viz:position x="-9.147270416243527" y="53.325358718287696" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vesikansa, Jyrki" />
           <attvalue for="1" value="hum" />
@@ -4819,7 +4819,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="0.11667474874520845" y="-18.622332645958963" z="0.0" />
+        <viz:position x="13.196040547267879" y="-4.0738270623544315" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tuukkanen, Suvi" />
           <attvalue for="1" value="matlu" />
@@ -4835,7 +4835,7 @@
         <viz:color r="87" g="112" b="194" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-7.1892020906865985" y="34.48826976269701" z="0.0" />
+        <viz:position x="9.26385178690575" y="38.09475266828656" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Tyyskä, Samuli" />
           <attvalue for="1" value="hum" />
@@ -4851,7 +4851,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="15.612034223192492" y="-25.389288056712655" z="0.0" />
+        <viz:position x="12.514554990450492" y="-28.758739220280393" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Vaaranta, Antti" />
           <attvalue for="1" value="matlu" />
@@ -4867,7 +4867,7 @@
         <viz:color r="228" g="169" b="36" a="1.0" />
         <viz:size value="0.05" />
         <viz:shape value="disc" />
-        <viz:position x="-18.734282210943924" y="-15.166854334567411" z="0.0" />
+        <viz:position x="-8.397971561098304" y="-3.049074474298384" z="0.0" />
         <attvalues>
           <attvalue for="0" value="Nieminen, Marko" />
           <attvalue for="1" value="matlu" />
