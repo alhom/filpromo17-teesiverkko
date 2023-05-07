@@ -59,9 +59,9 @@
                 "degree": "Dərəcə"
             },
             "de": {
-                "search": "Suche Knoten",
+                "search": "Suche Promovenden",
                 "nodeAttr": "Attribute",
-                "nodes": "Knoten",
+                "nodes": "Promovenden",
                 "inLinks": "Ankommende Verknüpfung von",
                 "outLinks": "Ausgehende Verknüpfung zu",
                 "undirLinks": "Ungerichtete Verknüpfung mit",
@@ -89,7 +89,7 @@
             "en": {
                 "search": "Search nodes",
                 "nodeAttr": "Attributes",
-                "nodes": "Nodes",
+                "nodes": "Promovendi",
                 "inLinks": "Inbound Links from:",
                 "outLinks": "Outbound Links to:",
                 "undirLinks": "Undirected links with:",
@@ -127,9 +127,9 @@
                 "pageranks": "Puntuación de PageRank"
             },
             "fi": {
-                "search": "Etsi solmuja",
+                "search": "Etsi promovendejä",
                 "nodeAttr": "Attribuutit",
-                "nodes": "Solmut",
+                "nodes": "Promovendit",
                 "inLinks": "Lähtevät yhteydet :",
                 "outLinks": "Tulevat yhteydet :",
                 "undirLinks": "Yhteydet :",
@@ -195,9 +195,9 @@
                 "zoomOut": "Uzaklaştır",
             },
             "nl": {
-                "search": "Knooppunten doorzoeken",
+                "search": "Promovendus doorzoeken",
                 "nodeAttr": "Attributen",
-                "nodes": "Knooppunten",
+                "nodes": "Promovendus",
                 "inLinks": "Binnenkomende verbindingen van :",
                 "outLinks": "Uitgaande verbindingen naar :",
                 "undirLinks": "Ongerichtte verbindingen met:",
