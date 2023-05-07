@@ -239,11 +239,11 @@ if not skipsims:
       print("Gensim:", lang)
       corpus = corpora[lang]
       gdicts[lang] = gcorpora.Dictionary(corpus.values())
-      gbows[lang] = [gdicts[lang].doc2bow(text) for text in corpus.values()]
+      gbows[lang] = {gradut[lang][i].global_id: gdicts[lang].doc2bow(text) for i,text in enumerate(corpus.values())}
       print(gdicts[lang])
-      gmodels[lang] = models.TfidfModel(gbows[lang], smartirs='nfu')
+      gmodels[lang] = models.TfidfModel(gbows[lang].values(), smartirs='nfu')
       nf=len(gdicts[lang].dfs)
-      gindices[lang] = gsimilarities.SparseMatrixSimilarity(gbows[lang], num_features=nf)
+      gindices[lang] = gsimilarities.SparseMatrixSimilarity(gbows[lang].values(), num_features=nf)
 
 
 
@@ -258,7 +258,7 @@ if not skipsims:
    model = gmodels[lang]
    print(model, index)
    for i,query in enumerate(corpus):
-      bow = gbows[lang][i]
+      bow = gbows[lang][gradut[lang][i].global_id]
       #print("querying", list(corpora[lang].keys())[i])
       tfids = index[model[bow]] #this could be done also all-to-all for performance!
       #print(tfids)
@@ -319,7 +319,7 @@ plt.savefig("num_words.png")
 
 
 # Time to start creating the graph, using networkx
-edgesfromnode = 6
+edgesfromnode = 5
 G = nx.Graph()
 
 for p,g in enumerate(gradut_all):
@@ -362,11 +362,9 @@ for p,g in enumerate(gradut_all):
          model = gmodels[langi]
          # sims = gindices[ki][model[gbows[ki][g.langid[ki]]]] 
          if langi in gradut_all[j].abstracts.keys():
-            veci = model[gbows[langi][g.langid[langi]]]
-            vecj = model[gbows[langi][gradut_all[j].langid[langi]]]
+            veci = model[gbows[langi][g.global_id]]
+            vecj = model[gbows[langi][gradut_all[j].global_id]]
             dots = []
-            dicti = {}
-            dictj = {}
             dicti = {a:b for a, b in veci}
             dictj = {a:b for a, b in vecj}
 
@@ -377,14 +375,16 @@ for p,g in enumerate(gradut_all):
             simwords = sorted(dots, key=lambda item: -item[1])
             edgewordn = 5
             edgewords = simwords[:edgewordn]
-            edgewords = [gdicts[langi][word[0]]+":{:03f}".format(word[1]) for word in edgewords]
-            edgestr = ""
+            edgewords = [gdicts[langi][word[0]]+" ({:03f}); ".format(word[1])for word in edgewords]
+            try:
+               edgestr = G.edges[i,j]["keywords"]
+            except:
+               edgestr = ""
             for w in edgewords:
-               edgestr += w +" "
-            G.edges[i,j]["keywords"] = edgestr
+               edgestr += w 
+            G.edges[i,j]["keywords"] = edgestr[:-2]
             
             
-
    # for j,g2 in enumerate(gradut_all):
    #    if(j == i):
    #       break

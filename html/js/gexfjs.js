@@ -12,7 +12,9 @@
  *    Jan de Mooij (Dutch)
  *    Bruna Delazeri (Brazilian Portuguese)
  *    Adil Aliyev (Azerbaijani)
- * */
+ *
+ * Further customized by Markku Alho
+ *  */
 
 (function() {
 
@@ -136,7 +138,7 @@
                 "lensOn": "Ota linssitila käyttöön",
                 "lensOff": "Poista linssitila käytöstä",
                 "edgeOn": "Näytä kaikki yhteydet",
-                "edgeOff": "Näytä vain valitun solmun yhteydet",
+                "edgeOff": "Näytä vain valitun promovendin yhteydet",
                 "zoomIn": "Suurenna",
                 "zoomOut": "Pienennä",
             },
@@ -338,7 +340,7 @@
                     if (GexfJS.params.showEdgeWeight) {
                         $('<span>').text(" (" + _e.w + ") ").appendTo(_li);
                     }
-                    //$('<span>').text(" " + _e.kw + ")").appendTo(_li);
+                    $('<span>').text(" " + _e.kw + ")").appendTo(_li);
                     if (_e.d) {
                         _str_in.push(_li);
                     } else {
