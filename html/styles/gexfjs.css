@@ -276,3 +276,18 @@ a:hover {
 #autocomplete img {
     float: left; border: 0; width: 24px; height: 24px; margin: 2px 6px;
 }
+
+dt.attributelist{
+   font-weight: bold;
+}
+dt.collapsible_attr{
+   font-weight: bold;
+}
+
+dt.collapsible_attr::after{
+   content: "+";
+}
+
+dt.active::after{
+   content: "-";
+}

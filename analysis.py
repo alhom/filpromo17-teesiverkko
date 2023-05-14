@@ -136,6 +136,7 @@ for i,g in enumerate(gradut_all):
       except:
          singlelans[l] = 1
 
+gdict = {g.global_id: g for g in gradut_all}
 
 print("Looking at ", len(gradut_all), "theses, statistics")
 print("Abstract languages:")
@@ -384,7 +385,7 @@ for p,g in enumerate(gradut_all):
                   dots.append((a,b*dictj[a]))
             #print(dots)
             simwords = sorted(dots, key=lambda item: -item[1])
-            edgewordn = 5
+            edgewordn = 4
             edgewords = simwords[:edgewordn]
             edgewords = [gdicts[langi][word[0]]+" ({:03f}); ".format(word[1])for word in edgewords]
             try:
@@ -393,7 +394,7 @@ for p,g in enumerate(gradut_all):
                edgestr = ""
             for w in edgewords:
                edgestr += w 
-            G.edges[i,j]["keywords"] = edgestr[:-2]
+            G.edges[i,j]["keywords"] = edgestr[:-2]+" "
             
             
    # for j,g2 in enumerate(gradut_all):
@@ -424,7 +425,7 @@ fig.tight_layout()
 
 pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=100, iterations=1000)  # nearly the same as Gephi Force
 
-colors = [facultycolors[G.nodes[g]["facultyid"]] for g in G.nodes]
+colors = [facultycolors[gdict[g].facultyid] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
 
 nodesize = {"doctor": 10, "master": 4, "doctor_jubilee": 14, "master_jubilee": 8}
@@ -452,7 +453,7 @@ nodesize = {"doctor": 0.1, "master": 0.07, "doctor_jubilee": 0.15, "master_jubil
 nodeshape = {"doctor":'square', 'master':'disc', "doctor_jubilee":'square', 'master_jubilee':'disc'}
 
 for g in G.nodes:
-   c = facultycolors[G.nodes[g]["facultyid"]]
+   c = facultycolors[gdict[g].facultyid]
    G.nodes[g]["viz"] = {'size'    : nodesize[G.nodes[g]["type"]],
                         'position': {'x':pos[g][0]*gexfscale, 'y':pos[g][1]*gexfscale,'z':0.0},
                         'color'   : {'r':int(c[0]*255),'g':int(255*c[1]),'b':int(255*c[2])},
@@ -481,5 +482,9 @@ with open(gexfOut, 'r') as file:
 #    file.writelines(gexfData)
 
 with open("weird.txt","w") as f:
-   for g in [g for g in gradut_all if g.weird != '']:
+   for g in [g for g in gradut_all if g.weird != '' and not 'manual' in g.weird]:
+      f.write(str(g))
+
+with open("manual.txt","w") as f:
+   for g in [g for g in gradut_all if 'manual' in g.weird]:
       f.write(str(g))

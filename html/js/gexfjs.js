@@ -104,11 +104,21 @@
 
                 "author": "Author",
                 "facultyid": "Faculty",
-                "subject": "Subject",
+                "subject": "Keywords",
                 "title": "Title",
                 "url": "Url",
                 "faculty": "Faculty",
-                "type": "Degree"
+                "type": "Degree",
+                "doctor": "Doctor",
+                "master": "Master",
+                "doctor_jubilee": "Jubilee Doctor",
+                "master_jubilee": "Jubilee Master",
+
+                "abstract_en": "Abstract (en)",
+                "abstract_fi": "Abstract (fi)",
+                "abstract_sv": "Abstract (sv)",
+                "abstract_et": "Abstract (et)",
+                "abstract_ru": "Abstract (ru)",
             },
             "es": {
                 "search": "Buscar un nodo",
@@ -152,12 +162,23 @@
 
                 "author": "Tekijä",
                 "facultyid": "Tiedekunta-id",
-                "subject": "Aihe",
+                "subject": "Aihesanat",
                 "title": "Otsikko",
                 "url": "Url",
                 "faculty": "Tiedekunta",
                 "type": "Tutkinto",
                 "abstract": "Tiivistelmä",
+
+                "doctor": "Tohtori",
+                "master": "Maisteri",
+                "doctor_jubilee": "Riemutohtori",
+                "master_jubilee": "Riemumaisteri",
+
+                "abstract_en": "Tiivistelmä (en)",
+                "abstract_fi": "Tiivistelmä (fi)",
+                "abstract_sv": "Tiivistelmä (sv)",
+                "abstract_et": "Tiivistelmä (et)",
+                "abstract_ru": "Tiivistelmä (ru)",
             },
             "fr": {
                 "search": "Rechercher un nœud",
@@ -270,7 +291,11 @@
 
     function strLang(_str) {
         var _l = GexfJS.i18n[GexfJS.lang];
-        return (_l[_str] ? _l[_str] : (GexfJS.i18n["en"][_str] ? GexfJS.i18n["en"][_str] : _str.replace("_", " ")));
+        var _out = (_l[_str] ? _l[_str] : (GexfJS.i18n["en"][_str] ? GexfJS.i18n["en"][_str] : _str.replace("_", " ")))
+        if(_out == "undefined")
+        { return _str;}
+        else
+        {return _out;}
     }
 
     function replaceURLWithHyperlinks(text) {
@@ -297,7 +322,7 @@
         if (_nodeIndex != -1) {
             var _d = GexfJS.graph.nodeList[_nodeIndex],
                 _html = $('<div>'),
-                _ul = $('<ul>'),
+                _ul = $('<dl class="attributelist">'),
                 _cG = $("#leftcolumn");
             _cG.animate({
                 "left": "0px"
@@ -314,23 +339,42 @@
             $('<h4>').text(strLang("nodeAttr")).appendTo(_html);
             _ul.appendTo(_html);
             if (GexfJS.params.showId) {
-                var _li = $("<li>");
+                var _li = $("<dt>");
                 $("<b>").text("id: ").appendTo(_li);
-                $("<span>").text(_d.id).appendTo(_li);
+                $("<dd>").text(_d.id).appendTo(_li);
                 _li.appendTo(_ul);
             }
             for (var i = 0, l = _d.a.length; i < l; i++) {
                 var attr = _d.a[i];
-                var _li = $("<li>");
                 var attrkey = GexfJS.graph.attributes[attr[0]];
-                $("<b>").text(strLang(GexfJS.graph.attributeLabels[attrkey]) + ": ").appendTo(_li);
+                if (GexfJS.graph.attributeLabels[attrkey].includes("abstract"))
+                {
+                  var _dt = $('<dt class="collapsible_attr">');
+                  _dt.append(strLang(GexfJS.graph.attributeLabels[attrkey]) + " ");
+                } else{
+                  var _dt = $('<dt class="attributelist">');
+                  _dt.append(strLang(GexfJS.graph.attributeLabels[attrkey]) + " ");
+                }
+                var _dd = $('<dd class="attributelist">');
+                //$("<span>").text(strLang(GexfJS.graph.attributeLabels[attrkey]) + ": ").appendTo(_li);
+                
+                _dt.appendTo(_ul);
+
+                
                 if (attrkey === 'image') {
                     $('<br>').appendTo(_li);
                     $('<img>').attr("src", attr[1]).appendTo(_li).addClass("attrimg");
                 } else {
-                    _li.append(replaceURLWithHyperlinks(attr[1]));
+                  if (GexfJS.graph.attributeLabels[attrkey].includes("url"))
+                  {
+                    _dd.append(replaceURLWithHyperlinks(strLang(attr[1])));
+                  }
+                  else{
+                  _dd.append(strLang(attr[1]));
+                  }
                 }
-                _li.appendTo(_ul);
+                _dd.appendTo(_ul);               
+               
             }
             var _str_in = [],
                 _str_out = [],
@@ -357,7 +401,7 @@
                     if (GexfJS.params.showEdgeWeight) {
                         $('<span>').text(" (" + _e.w + ") ").appendTo(_li);
                     }
-                    $('<span>').text(" " + _e.kw + ")").appendTo(_li);
+                  //   $('<span>').text(" " + _e.kw + ")").appendTo(_li);
                     if (_e.d) {
                         _str_in.push(_li);
                     } else {
@@ -413,6 +457,23 @@
                 .val(_d.l)
                 .removeClass('grey');
         }
+        var coll = document.getElementsByClassName("collapsible_attr");
+        var i;        
+        for (i = 0; i < coll.length; i++) {
+          var content = coll[i].nextElementSibling;
+          content.style.display = "none";
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
     }
 
     function updateWorkspaceBounds() {
@@ -708,7 +769,6 @@
                            });
                         }
                     });
-                    console.log(GexfJS.graph.attributeLabels)
                     var _xmin = 1e9, _xmax = -1e9, _ymin = 1e9, _ymax = -1e9; _marge = 30;
                     $(_nodes).each(function () {
                         var _n = $(this),
@@ -773,7 +833,7 @@
                             _tid = _e.attr("target"),
                             _tix = nodeIndexById.indexOf(_tid),
                             _w = _e.find('attvalue[for="weight"]').attr('value') || _e.attr('weight'),
-                            _kw = _e.find('attvalue[for="8"]').attr('value') || _e.attr('8'),
+                            _kw = _e.find('attvalue[for="10"]').attr('value') || _e.attr('10'),
                             _col = _e.find("viz\\:color,color"),
                             _directed = GexfJS.graph.directed;
                         if (_e.attr("type") == "directed") {
