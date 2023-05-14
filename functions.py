@@ -12,10 +12,12 @@ class Thesis(object):
         return "Thesis()"
     def __str__(self):
 		# Function for printing the data of the thesis
-         string = self.thesistype+':\n'
+         string = self.thesistype+' '
+         if self.author: string += self.author+'\n'
+         if self.weird != '': string += 'Weirdness found:\t\t'+self.weird+'\n'
          if self.title: string += 'Title:\t\t'+self.title+'\n'
-         if self.author: string += 'Author:\t\t'+self.author+'\n'
          if self.unit: string += 'Unit:\t\t'+self.unit+'\n'
+         if self.facultyid: string += 'facultyId:\t\t'+self.facultyid+'\n'
          if self.subject: string += 'Subject:\t'+self.subject+'\n'
          if self.language: string += 'Language:\t'+self.language+'\n'
          if self.date: string += 'Date:\t\t'+self.date+'\n'
@@ -26,13 +28,14 @@ class Thesis(object):
          if self.charcount: string += 'Char count:\t'+str(self.charcount)+'\n'
          if self.figurecount: string += 'Figure count:\t\t'+str(self.figurecount)+'\n'
          if self.pagecount: string += 'Page count:\t\t'+str(self.pagecount)+'\n'
-
+         string+='\n'
 
          return string
     
     def __init__(self, metadata=None):
       # Initializing the values
-      self.id = ''
+      self.metadata = {'identifier':'Missing'}
+      self.id = '' # Helda ID
       self.langid = {}
       self.author = ''
       self.title = ''
@@ -53,12 +56,13 @@ class Thesis(object):
       self.charcount = 0
       self.figurecount = 0
       self.pagecount = 0
+      self.weird = ''
       if metadata is not None:
           metaharvester(metadata, thesis=self)
 
 
 def dumpTheses(gradut, filename='thesisdump.pkl'):
-   gradut_dict = {g.id : g for g in gradut}
+   gradut_dict = {g.id : g for g in gradut if hasattr(g,"id")}
    with open(filename,'wb') as output:
         	pickle.dump(list(gradut_dict.values()), output, pickle.HIGHEST_PROTOCOL)
                 
@@ -68,13 +72,13 @@ def loadTheses(reprocess = False, filename='thesisdump.pkl', verbose=False):
       print('Loaded %d theses' % len(gradut))
    if reprocess:
       print("Reprocessings")
-      gradut_again = [metaharvester(g.metadata, verbose=verbose) for g in gradut]
+      gradut_again = [metaharvester(g.metadata, verbose=verbose) for g in gradut if hasattr(g,"metadata")]
       return gradut_again
    else:
       return gradut
 
 def filterTheses(gradut, indexfile="iideet_2023.txt"):
-   gradut_dict = {g.id : g for g in gradut}
+   gradut_dict = {g.id : g for g in gradut if hasattr(g, "id")}
    gradut = list(gradut_dict.values())
    if indexfile is not None:
       with open(indexfile,'r') as index:
@@ -127,8 +131,12 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
             except:
                print("No metadata for", line.strip(), "skipping record",record)
                continue
-
-            g = metaharvester(metadata)
+            if hasattr(g, "metadata"):
+               g = metaharvester(metadata)
+               if g is None:
+                  continue
+            else:
+               continue
             if (g.id not in readyids):
                gradut.append(g)
             #print(metadata['description'][0])
@@ -174,6 +182,8 @@ def getRecords(setname,fromdate='2014-09-14', untildate='2024-01-01', max = 3, d
             continue
 
          g = metaharvester(metadata, verbose=False)
+         if g is None:
+            continue
          gradut.append(g)
          #print(metadata['description'][0])
          total = total+1
@@ -275,8 +285,10 @@ def metaharvester(metadata, thesis=None, verbose=True):
       thisthesis = thesis
 
     thisthesis.metadata = metadata # Store the full metadata as well.
-
-    thisthesis.id = [metadata['identifier'][i][22:] for i in range(len(metadata['identifier'])) if "hdl.handle" in metadata['identifier'][i]][0]
+    try:
+      thisthesis.id = [metadata['identifier'][i][22:] for i in range(len(metadata['identifier'])) if "hdl.handle" in metadata['identifier'][i]][0]
+    except:
+      return None
 
 
     # Try to find each metadata type, not all theses have all of these
@@ -311,6 +323,7 @@ def metaharvester(metadata, thesis=None, verbose=True):
                l = langdetect.detect(abs)
                if(verbose): print("adding abstracts entry for ", l, ":", abs[:12],"...")
                thisthesis.abstracts[l] = abs
+         thisthesis.weird += 'No abstract. '
         except:
          print("Couldn't even use title! Empty string it is.") 
         
@@ -372,20 +385,24 @@ def metaharvester(metadata, thesis=None, verbose=True):
           if "kasvatustie" in sabs[1].casefold():
               thisthesis.facultyid = "cond"
           if "social" in sabs[1].casefold(): #valtsikan relevantit ohjelmat condukseen?
+              thisthesis.weird += "Strange faculty. "
               thisthesis.facultyid = "cond"
           if "educational" in sabs[1].casefold():
               thisthesis.facultyid = "cond"
           if "behavio" in sabs[1].casefold():
               thisthesis.facultyid = "cond"
           if "lääket" in sabs[1].casefold(): # Psykologit oli conduslaisia?
+              thisthesis.weird += "Strange faculty. "
               thisthesis.facultyid = "cond"
           if "farmasian" in sabs[1].casefold():
               thisthesis.facultyid = "farm"
           if "pharmacy" in sabs[1].casefold():
               thisthesis.facultyid = "farm"
           if "maatalous" in sabs[1].casefold():
+              thisthesis.weird += "Strange faculty. "
               thisthesis.facultyid = "bio"
           if "agriculture".casefold() in sabs[1].casefold():
+              thisthesis.weird += "Strange faculty. "
               thisthesis.facultyid = "bio"
     except: pass
     if thisthesis.facultyid == "other":

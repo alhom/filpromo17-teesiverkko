@@ -101,6 +101,14 @@
                 "edgeOff": "Hide edges",
                 "zoomIn": "Zoom In",
                 "zoomOut": "Zoom Out",
+
+                "author": "Author",
+                "facultyid": "Faculty",
+                "subject": "Subject",
+                "title": "Title",
+                "url": "Url",
+                "faculty": "Faculty",
+                "type": "Degree"
             },
             "es": {
                 "search": "Buscar un nodo",
@@ -141,6 +149,15 @@
                 "edgeOff": "Näytä vain valitun promovendin yhteydet",
                 "zoomIn": "Suurenna",
                 "zoomOut": "Pienennä",
+
+                "author": "Tekijä",
+                "facultyid": "Tiedekunta-id",
+                "subject": "Aihe",
+                "title": "Otsikko",
+                "url": "Url",
+                "faculty": "Tiedekunta",
+                "type": "Tutkinto",
+                "abstract": "Tiivistelmä",
             },
             "fr": {
                 "search": "Rechercher un nœud",
@@ -306,7 +323,7 @@
                 var attr = _d.a[i];
                 var _li = $("<li>");
                 var attrkey = GexfJS.graph.attributes[attr[0]];
-                $("<b>").text(strLang(attrkey) + ": ").appendTo(_li);
+                $("<b>").text(strLang(GexfJS.graph.attributeLabels[attrkey]) + ": ").appendTo(_li);
                 if (attrkey === 'image') {
                     $('<br>').appendTo(_li);
                     $('<img>').attr("src", attr[1]).appendTo(_li).addClass("attrimg");
@@ -678,7 +695,20 @@
                         indexOfLabels: [],
                         edgeList: [],
                         attributes: {},
+                        attributeLabels: {},
                     };
+                    var _gattribs = _g.children().filter("attributes");
+                    $(_gattribs).each(function () {
+                        var _atts=$(this);
+                        if(_atts.attr("class") == "node"){
+                           $(_atts.children()).each(function () {
+                              var _att = $(this)
+
+                              GexfJS.graph.attributeLabels[_att.attr("id")] = _att.attr("title");
+                           });
+                        }
+                    });
+                    console.log(GexfJS.graph.attributeLabels)
                     var _xmin = 1e9, _xmax = -1e9, _ymin = 1e9, _ymax = -1e9; _marge = 30;
                     $(_nodes).each(function () {
                         var _n = $(this),

@@ -51,9 +51,12 @@ def harvest(reharvest = 0, max = 3):
 
 
    for gradu in gradut:
-      pass
+      continue
       #print(gradu.author+':\t\t'+gradu.title)
-      print(gradu.unit)
+      try:
+         print(gradu.unit)
+      except:
+         print("Missing unit for ", gradu.author, gradu.id)
       
       #print gradu.abstract
       if False:#'Alho' in gradu.author: #or 'Saressalo' in gradu.author:

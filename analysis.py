@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import networkx as nx
 import langcodes
+import manual_entries_2023_fil as man_entries
 
 def langname(l):
    langcodes.Language.get(l).display_name().lower()
@@ -73,6 +74,7 @@ print("gradut_all len", len(gradut_all))
 dumpTheses(gradut_all) # get the missing ones
 gradut_missing = graduharvest.harvest(reharvest=2, max = 1e32)
 gradut_all = gradut_missing
+man_entries.fix_metadata(gradut_all)
 dumpTheses(gradut_all)
 dumpTheses(gradut_alll+gradut_missing, "thesisdump_all.pkl")
 #sys.exit()
@@ -81,11 +83,16 @@ abslangs = {}
 singlelans = {}
 # Collect theses by availabe abstract languages
 
-gradut_sus = [g for g in gradut_all if not ((g.thesistype == 'doctor') or (g.thesistype == 'master'))]
+gradut_sus = [g for g in gradut_all if not ((g.thesistype == 'doctor') or (g.thesistype == 'master') or (g.thesistype == 'doctor_jubilee') or (g.thesistype == 'master_jubilee'))]
 if len(gradut_sus) > 0:
    print("Found", len(gradut_sus), "suspect entries, fix these before continuing:")
    for g in gradut_sus:
-      print(g, g.thesistype, g.metadata['type'])
+      try:
+         typestr = g.metadata['type']
+      except:
+         typestr = "manually typed"
+
+      print(g, g.thesistype, typestr)
    sys.exit()
 
 gradut_sus = [g for g in gradut_all if g.facultyid == 'other']
@@ -322,12 +329,14 @@ plt.savefig("num_words.png")
 edgesfromnode = 5
 G = nx.Graph()
 
+
 for p,g in enumerate(gradut_all):
    i = g.global_id
    G.add_node(i)
-   G.nodes[i]["author"] = g.author
    G.nodes[i]["label"] = g.author
-   G.nodes[i]["facultyid"] = g.facultyid
+
+   #G.nodes[i]["author"] = g.author
+   # G.nodes[i]["facultyid"] = g.facultyid
    G.nodes[i]["type"] = g.thesistype
    G.nodes[i]["faculty"] = g.faculty
    #G.nodes[i]["unit"] = g.unit
@@ -336,7 +345,9 @@ for p,g in enumerate(gradut_all):
    G.nodes[i]["subject"] = g.subject
 
    # Keep this/these last, lots of text... but ofc it's not sorted
-   G.nodes[i]["abstract"] = fmt_abstracts(g.abstracts)
+   #G.nodes[i]["abstract"] = fmt_abstracts(g.abstracts)
+   for l in g.abstracts.keys():
+      G.nodes[i]["abstract_"+l] = g.abstracts[l]
 
 #hm, not actually sure if adding edges while adding nodes, to possibly uninitialized nodes is a good idea.. splitting the loop
 for p,g in enumerate(gradut_all):
@@ -416,28 +427,29 @@ pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=
 colors = [facultycolors[G.nodes[g]["facultyid"]] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
 
-nodesize = {"doctor": 10, "master": 2}
+nodesize = {"doctor": 10, "master": 4, "doctor_jubilee": 14, "master_jubilee": 8}
+matplotplot = False
+if(matplotplot):
+   options = {'node_size': [nodesize[G.nodes[g]["type"]] for g in G.nodes],
+            'node_color':colors,
+            'width':2*lwgts,
+            'edge_color':lgold+"55",
+            'labels':{g : G.nodes[g]["label"] for g in G.nodes},
+            'font_size':1,
+            'font_color':azure
+            }
 
-options = {'node_size': [nodesize[G.nodes[g]["type"]] for g in G.nodes],
-           'node_color':colors,
-           'width':2*lwgts,
-           'edge_color':lgold+"55",
-           'labels':{g : G.nodes[g]["author"] for g in G.nodes},
-           'font_size':1,
-           'font_color':azure
-           }
+   #pos = nx.kamada_kawai_layout(G, weight ="weight")  # a bit messy, but maybe fine
+   #pos = nx.spectral_layout(G, weight ="weight")  # actual cluster disappears...
 
-#pos = nx.kamada_kawai_layout(G, weight ="weight")  # a bit messy, but maybe fine
-#pos = nx.spectral_layout(G, weight ="weight")  # actual cluster disappears...
+   nx.draw(G, pos, **options, ax=plt.gca())
 
-nx.draw(G, pos, **options, ax=plt.gca())
-
-plt.savefig("agraph.svg", facecolor=beaublue)
+   plt.savefig("agraph.svg", facecolor=beaublue)
 
 #the the gexf export. Need to put vis data to ["viz"]..
 gexfscale = 100
-nodesize = {"doctor": 0.1, "master": 0.05}
-nodeshape = {"doctor":'square', 'master':'disc'}
+nodesize = {"doctor": 0.1, "master": 0.07, "doctor_jubilee": 0.15, "master_jubilee": 0.1}
+nodeshape = {"doctor":'square', 'master':'disc', "doctor_jubilee":'square', 'master_jubilee':'disc'}
 
 for g in G.nodes:
    c = facultycolors[G.nodes[g]["facultyid"]]
@@ -450,4 +462,24 @@ for e in G.edges:
    G.edges[e]["viz"] = {'thickness': G.edges[e]["weight"]**0.5, #this does nothing?
                         }
 
-nx.write_gexf(G,"html/graph.gexf")
+gexfOut = "html/graph.gexf"
+nx.write_gexf(G,gexfOut)
+
+with open(gexfOut, 'r') as file:
+    # read a list of lines into data
+    gexfData = file.readlines()
+
+# for i,line in enumerate(gexfData):
+#    for k in attributeLabels.keys():
+#       strin = 'attvalue for="{:d}"'.format(k)
+#       if(strin in line):
+#          line = line.replace(strin, 'attvalue for="'+attributeLabels[k]+'"')
+#          print(line)
+#          gexfData[i] = line
+
+# with open(gexfOut, "w") as file:
+#    file.writelines(gexfData)
+
+with open("weird.txt","w") as f:
+   for g in [g for g in gradut_all if g.weird != '']:
+      f.write(str(g))
