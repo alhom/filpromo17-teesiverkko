@@ -194,6 +194,47 @@
                 "cond":  "Kasvatustieteellinen tiedekunta"
 
             },
+            "svs": {
+               "search": "Etsi promovendejä",
+               "nodeAttr": "Attribuutit",
+               "nodes": "Promovendit",
+               "inLinks": "Lähtevät yhteydet:",
+               "outLinks": "Tulevat yhteydet:",
+               "undirLinks": "Yhteydet:",
+               "lensOn": "Ota linssitila käyttöön",
+               "lensOff": "Poista linssitila käytöstä",
+               "edgeOn": "Näytä kaikki yhteydet",
+               "edgeOff": "Näytä vain valitun promovendin yhteydet",
+               "zoomIn": "Suurenna",
+               "zoomOut": "Pienennä",
+
+               "author": "Tekijä",
+               "facultyid": "Tiedekunta-id",
+               "subject": "Aihesanat",
+               "title": "Otsikko",
+               "url": "Url",
+               "faculty": "Tiedekunta",
+               "type": "Tutkinto",
+               "abstract": "Tiivistelmä",
+
+               "doctor": "Tohtori",
+               "master": "Maisteri",
+               "doctor_jubilee": "Riemutohtori",
+               "master_jubilee": "Riemumaisteri",
+
+               "abstract_en": "Tiivistelmä (en)",
+               "abstract_fi": "Tiivistelmä (fi)",
+               "abstract_sv": "Tiivistelmä (sv)",
+               "abstract_et": "Tiivistelmä (et)",
+               "abstract_ru": "Tiivistelmä (ru)",
+
+               "matlu": "Matematisk-naturvetenskapliga fakulteten",
+               "bio":   "Bio- och miljövetenskapliga fakulteten",
+               "farm":  "Farmaceutiska fakulteten",
+               "hum":   "Humanistiska fakulteten",
+               "cond":  "Pedagogiska fakulteten"
+
+           },
             "fr": {
                 "search": "Rechercher un nœud",
                 "nodeAttr": "Attributs",

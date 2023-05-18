@@ -351,7 +351,8 @@ for p,g in enumerate(gradut_all):
    for l in g.abstracts.keys():
       G.nodes[i]["abstract_"+l] = g.abstracts[l]
 
-#hm, not actually sure if adding edges while adding nodes, to possibly uninitialized nodes is a good idea.. splitting the loop
+
+added_nodes = 0 # count nodes after removing non-connected ones
 for p,g in enumerate(gradut_all):
    i = g.global_id
    # print(similarities_all[i,:i])
@@ -362,6 +363,7 @@ for p,g in enumerate(gradut_all):
       G.remove_node(i)
       print("No connections for ", g, ", sad")
       continue
+   added_nodes+=1
    # print(g.author, i, topsi[:5])
    for j in topsi[1:edgesfromnode]:
       if(j == i): continue
@@ -409,7 +411,7 @@ for p,g in enumerate(gradut_all):
 
 #nx.write_graphml(G, "graph.graphml")
 #straight to gexf after layout
-
+print("Graph contains {:d} nodes".format(added_nodes))
 
 beaublue = "#c5e1ff"
 babypowder = "#fffefa"
@@ -421,10 +423,11 @@ fig = plt.figure()
 fig.tight_layout()
 
 # seeds
-# 1969   ok-ish, but very vertical
-# 2023   cool, this is about the same as 2017, but flipped clusters!
+# 2023   this is now very vertical
+# 100    this is now very vertical
+# 1973   I kind of like this: horizontal, looks like a map, a bit US-ish actually
 
-pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=100, iterations=1000)  # nearly the same as Gephi Force
+pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=1973, iterations=1000)  # nearly the same as Gephi Force
 
 colors = [facultycolors[gdict[g].facultyid] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
