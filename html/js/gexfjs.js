@@ -1155,14 +1155,38 @@
         for (var i in GexfJS.graph.nodeList) {
             var _d = GexfJS.graph.nodeList[i];
             if (_d.visible && _d.withinFrame) {
-                if (i != _centralNode) {
+                if (i != _centralNode) {           // Node appearance
                     _d.real_coords = ((GexfJS.params.useLens && GexfJS.mousePosition) ? calcCoord(GexfJS.mousePosition.x, GexfJS.mousePosition.y, _d.actual_coords) : _d.actual_coords);
                     _d.isTag = (_tagsMisEnValeur.indexOf(parseInt(i)) != -1);
+                    
+                  //   GexfJS.ctxGraphe.font = "20px FontAwesome";
+                  //   GexfJS.ctxGraphe.fillText('\ue5d2', _d.real_coords.x, _d.real_coords.y);
+
+                  if(_d.a[2][1] == "master"){
                     GexfJS.ctxGraphe.beginPath();
                     GexfJS.ctxGraphe.fillStyle = ((_tagsMisEnValeur.length && !_d.isTag) ? _d.G : _d.B);
-                    GexfJS.ctxGraphe.arc(_d.real_coords.x, _d.real_coords.y, _d.real_coords.r, 0, Math.PI * 2, true);
+                    GexfJS.ctxGraphe.arc(_d.real_coords.x, _d.real_coords.y, _d.real_coords.r, 0, Math.PI * 2, true); 
                     GexfJS.ctxGraphe.closePath();
                     GexfJS.ctxGraphe.fill();
+                  }
+                  else{
+                     GexfJS.ctxGraphe.beginPath();
+                     GexfJS.ctxGraphe.fillStyle = ((_tagsMisEnValeur.length && !_d.isTag) ? _d.G : _d.B);
+                     var _doctorScale = 1.5;
+                     var _brimWidth = 1/1.4;
+                     var _brimThick = 1/1.6;
+                     GexfJS.ctxGraphe.moveTo(_d.real_coords.x + _doctorScale*_d.real_coords.r/2, _d.real_coords.y - _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r/2, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r*_brimThick);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r*_brimThick);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r/2, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r/2, _d.real_coords.y - _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r/2, _d.real_coords.y - _doctorScale*_d.real_coords.r/2);
+                     GexfJS.ctxGraphe.closePath();
+                     GexfJS.ctxGraphe.fill();
+                  }
                 }
             }
         }
@@ -1195,9 +1219,35 @@
 
         if (_centralNode != -1) {
             GexfJS.ctxGraphe.fillStyle = _dnc.B;
-            GexfJS.ctxGraphe.beginPath();
-            GexfJS.ctxGraphe.arc(_dnc.real_coords.x, _dnc.real_coords.y, _dnc.real_coords.r, 0, Math.PI * 2, true);
-            GexfJS.ctxGraphe.closePath();
+            var _d = _dnc;
+            if(_dnc.a[2][1] == "master"){
+               GexfJS.ctxGraphe.beginPath();
+               GexfJS.ctxGraphe.fillStyle = ((_tagsMisEnValeur.length && !_d.isTag) ? _d.G : _d.B);
+               GexfJS.ctxGraphe.arc(_d.real_coords.x, _d.real_coords.y, _d.real_coords.r, 0, Math.PI * 2, true); 
+               GexfJS.ctxGraphe.closePath();
+               GexfJS.ctxGraphe.fill();
+             }
+             else{
+                GexfJS.ctxGraphe.beginPath();
+                GexfJS.ctxGraphe.fillStyle = ((_tagsMisEnValeur.length && !_d.isTag) ? _d.G : _d.B);
+                var _doctorScale = 1.5;
+                var _brimWidth = 1/1.4;
+                var _brimThick = 1/1.6;
+                GexfJS.ctxGraphe.moveTo(_d.real_coords.x + _doctorScale*_d.real_coords.r/2, _d.real_coords.y - _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r/2, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r*_brimThick);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r*_brimThick);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r*_brimWidth, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r/2, _d.real_coords.y + _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x - _doctorScale*_d.real_coords.r/2, _d.real_coords.y - _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.lineTo(_d.real_coords.x + _doctorScale*_d.real_coords.r/2, _d.real_coords.y - _doctorScale*_d.real_coords.r/2);
+                GexfJS.ctxGraphe.closePath();
+                GexfJS.ctxGraphe.fill();
+             }
+            // GexfJS.ctxGraphe.beginPath();
+            // GexfJS.ctxGraphe.arc(_dnc.real_coords.x, _dnc.real_coords.y, _dnc.real_coords.r, 0, Math.PI * 2, true);
+            // GexfJS.ctxGraphe.closePath();
             GexfJS.ctxGraphe.fill();
             GexfJS.ctxGraphe.stroke();
             var _fs = Math.max(GexfJS.params.textDisplayThreshold + 2, _dnc.real_coords.r * _textSizeFactor) + 2;
