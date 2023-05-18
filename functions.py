@@ -112,7 +112,7 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
     # A function for reading the thesis entries from the database
     # fromdate as yyyy-mm-dd
 
-    # Check which ids we already have loaded. Ugly double comprehesion, since the identifiers are not sorted. 
+    # Check which ids we already have loaded.
     readyids = [g.id for g in gradut]
     print(readyids)
     sickle = Sickle('http://helda.helsinki.fi/oai/request')
@@ -131,12 +131,10 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
             except:
                print("No metadata for", line.strip(), "skipping record",record)
                continue
-            if hasattr(g, "metadata"):
-               g = metaharvester(metadata)
-               if g is None:
-                  continue
-            else:
+            g = metaharvester(metadata)
+            if g is None:
                continue
+
             if (g.id not in readyids):
                gradut.append(g)
             #print(metadata['description'][0])

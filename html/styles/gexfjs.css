@@ -3,7 +3,7 @@
  * */
 
 body {
-    font-family: Helvetica, Arial, sans-serif; font-size: 12px;
+    font-family: Poppins, Helvetica, Arial, sans-serif; font-size: 12px;
     background-color: #e0e0e8; color: #204020; margin: 0;
 }
 
@@ -19,7 +19,8 @@ body {
 /* EN HAUT */
 
 #titlebar {
-    background: #ffffff; border-bottom: 1px solid #CCC; position: fixed; margin: 0; padding: 0; left: 0; top: 0; right: 0; height: 45px; overflow: hidden;
+    background: #c5e1ff; border-bottom: 1px solid #CCC;
+    position: fixed; margin: 0; padding: 0; left: 0; top: 0; right: 0; height: 45px; overflow: hidden;
 }
 
 #maintitle {
@@ -32,7 +33,7 @@ h1 {
 }
 
 h1 a {
-    background: url(../img/promo.png) no-repeat;
+    background: 5% 50%/50% url(../img/Black-Logo180px.png) no-repeat;
     color: #208020;
     display: block;
     height:45px;
@@ -41,11 +42,11 @@ h1 a {
 }
 
 #searchinput {
-    background: #fff url(../img/search.gif) no-repeat right;
+    background: #fffefa url(../img/search.gif) no-repeat right;
     border: 1px solid #DDD;
-    font-size: 14px; line-height: 14px; height: 14px;
+    font-size: 16px; line-height: 20px; height: 20px;
     left: 250px;
-    padding: 1px 4px; margin: 0;
+    padding: 3px 4px; margin: 0;
     position: absolute;
     top: 10px;
     width: 320px;
@@ -194,15 +195,16 @@ h1 a {
 /* ZONE GAUCHE */
 
 #leftcontent {
+   background-color: #fffefa;
     position: absolute; left: 0; top: 0; bottom: 0; right: 0; overflow: auto; list-style: none; margin: 0; padding: 0; border-top: 1px solid #cccccc;
 }
 
 div.largepill {
-    float: left; width: 16px; height: 16px; border-radius: 8px; margin: 0 5px 0 0;
+    float: left; width: 16px; height: 16px; border-radius: 8px; margin: 4px 5px 0 0;
 }
 
 div.smallpill {
-    float: left; width: 12px; height: 12px; border-radius: 6px; margin: 0 5px 0 0;
+    float: left; width: 12px; height: 12px; border-radius: 6px; margin: 2px 5px 0 0;
 }
 
 #leftcontent h3 {

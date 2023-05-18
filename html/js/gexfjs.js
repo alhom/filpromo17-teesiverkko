@@ -119,6 +119,13 @@
                 "abstract_sv": "Abstract (sv)",
                 "abstract_et": "Abstract (et)",
                 "abstract_ru": "Abstract (ru)",
+
+                
+                "matlu": "Faculty of Science",
+                "bio":   "Faculty of Biological and Environmental Sciences ",
+                "farm":  "Faculty of Pharmacy",
+                "hum":   "Faculty of Arts",
+                "cond":  "Faculty of Educational Sciences"
             },
             "es": {
                 "search": "Buscar un nodo",
@@ -150,9 +157,9 @@
                 "search": "Etsi promovendejä",
                 "nodeAttr": "Attribuutit",
                 "nodes": "Promovendit",
-                "inLinks": "Lähtevät yhteydet :",
-                "outLinks": "Tulevat yhteydet :",
-                "undirLinks": "Yhteydet :",
+                "inLinks": "Lähtevät yhteydet:",
+                "outLinks": "Tulevat yhteydet:",
+                "undirLinks": "Yhteydet:",
                 "lensOn": "Ota linssitila käyttöön",
                 "lensOff": "Poista linssitila käytöstä",
                 "edgeOn": "Näytä kaikki yhteydet",
@@ -179,6 +186,13 @@
                 "abstract_sv": "Tiivistelmä (sv)",
                 "abstract_et": "Tiivistelmä (et)",
                 "abstract_ru": "Tiivistelmä (ru)",
+
+                "matlu": "Matemaattis-luonnontieteellinen tiedekunta",
+                "bio":   "Bio- ja ympäristötieteellinen tiedekunta",
+                "farm":  "Farmasian tiedekunta",
+                "hum":   "Humanistinen tiedekunta",
+                "cond":  "Kasvatustieteellinen tiedekunta"
+
             },
             "fr": {
                 "search": "Rechercher un nœud",
@@ -336,7 +350,7 @@
                 .append($('<div>').addClass('largepill').css('background', _d.B))
                 .append($('<span>').text(_d.l))
                 .appendTo(_html);
-            $('<h4>').text(strLang("nodeAttr")).appendTo(_html);
+            //$('<h4>').text(strLang("nodeAttr")).appendTo(_html);
             _ul.appendTo(_html);
             if (GexfJS.params.showId) {
                 var _li = $("<dt>");
@@ -399,7 +413,7 @@
                         $('<span>').text(" – " + _e.l).appendTo(_li);
                     }
                     if (GexfJS.params.showEdgeWeight) {
-                        $('<span>').text(" (" + _e.w + ") ").appendTo(_li);
+                        $('<span>').text(" (" + _e.w.toFixed(2) + ") ").appendTo(_li);
                     }
                   //   $('<span>').text(" " + _e.kw + ")").appendTo(_li);
                     if (_e.d) {
@@ -427,7 +441,7 @@
                         $('<span>').text(" – " + _e.l).appendTo(_li);
                     }
                     if (GexfJS.params.showEdgeWeight) {
-                        $('<span>').text(" (" + _e.w + ")").appendTo(_li);
+                        $('<span>').text(" (" + _e.w.toFixed(2) + ")").appendTo(_li);
                     }
                     if (_e.d) {
                         _str_out.push(_li);

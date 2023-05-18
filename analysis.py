@@ -74,6 +74,7 @@ print("gradut_all len", len(gradut_all))
 dumpTheses(gradut_all) # get the missing ones
 gradut_missing = graduharvest.harvest(reharvest=2, max = 1e32)
 gradut_all = gradut_missing
+print("gradut_all len", len(gradut_all),"after reharvest")
 man_entries.fix_metadata(gradut_all)
 dumpTheses(gradut_all)
 dumpTheses(gradut_alll+gradut_missing, "thesisdump_all.pkl")
@@ -335,15 +336,15 @@ for p,g in enumerate(gradut_all):
    i = g.global_id
    G.add_node(i)
    G.nodes[i]["label"] = g.author
-
+   if g.title != '':       G.nodes[i]["title"] = g.title
    #G.nodes[i]["author"] = g.author
-   # G.nodes[i]["facultyid"] = g.facultyid
-   G.nodes[i]["type"] = g.thesistype
-   G.nodes[i]["faculty"] = g.faculty
+   if g.facultyid != '':   G.nodes[i]["facultyid"] = g.facultyid
+   if g.thesistype != '':  G.nodes[i]["type"] = g.thesistype
+   #if g.faculty != '':     G.nodes[i]["faculty"] = g.faculty
    #G.nodes[i]["unit"] = g.unit
-   G.nodes[i]["url"] = g.link
-   G.nodes[i]["title"] = g.title
-   G.nodes[i]["subject"] = g.subject
+   if g.link != '':        G.nodes[i]["url"] = g.link
+   
+   if g.subject != '':     G.nodes[i]["subject"] = g.subject
 
    # Keep this/these last, lots of text... but ofc it's not sorted
    #G.nodes[i]["abstract"] = fmt_abstracts(g.abstracts)
