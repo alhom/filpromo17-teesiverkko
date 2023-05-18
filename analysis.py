@@ -23,6 +23,9 @@ import networkx as nx
 import langcodes
 import manual_entries_2023_fil as man_entries
 
+import git
+
+
 def langname(l):
    langcodes.Language.get(l).display_name().lower()
 
@@ -470,25 +473,37 @@ for e in G.edges:
 gexfOut = "html/graph.gexf"
 nx.write_gexf(G,gexfOut)
 
-with open(gexfOut, 'r') as file:
-    # read a list of lines into data
-    gexfData = file.readlines()
-
-# for i,line in enumerate(gexfData):
-#    for k in attributeLabels.keys():
-#       strin = 'attvalue for="{:d}"'.format(k)
-#       if(strin in line):
-#          line = line.replace(strin, 'attvalue for="'+attributeLabels[k]+'"')
-#          print(line)
-#          gexfData[i] = line
-
-# with open(gexfOut, "w") as file:
-#    file.writelines(gexfData)
-
+# Print out possible cases to be fixed
 with open("weird.txt","w") as f:
    for g in [g for g in gradut_all if g.weird != '' and not 'manual' in g.weird]:
       f.write(str(g))
 
+# Also print out manually fiddled cases, see if these can be found later
 with open("manual.txt","w") as f:
    for g in [g for g in gradut_all if 'manual' in g.weird]:
       f.write(str(g))
+
+
+# store git metadata
+repo = git.Repo(search_parent_directories=True)
+name_rev = repo.head.object.name_rev
+print("Git commit and branch:",name_rev)
+
+(sha, branch) = name_rev.split(' ')
+
+with open("html/theses.htm", 'r') as file:
+    # read a list of lines into data
+    html = file.readlines()
+
+for i,line in enumerate(html):
+   strin = "https://github.com/alhom/filpromo17-teesiverkko/"
+   if(strin in line):
+      #line = line.replace(strin, 'https://github.com/alhom/filpromo17-teesiverkko/'+branch)
+      line ='                <a href="https://github.com/alhom/filpromo17-teesiverkko/'+branch+'"><i class="fa-brands fa-github"></i></a>'
+      line += "<!-- on commit "+sha+" -->\n"
+      print(line)
+      html[i] = line
+
+with open("html/theses.htm", "w") as file:
+   file.writelines(html)
+

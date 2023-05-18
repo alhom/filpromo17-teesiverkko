@@ -27,6 +27,15 @@ body {
     position: absolute; left: 0; top: 0; width: 250px; text-align: center;
 }
 
+#about {
+   float:right;
+   font-size: 20px;
+   margin: 8px;
+}
+
+a.gitlink{
+   color: #000;
+}
 
 h1 {
     margin:0;
