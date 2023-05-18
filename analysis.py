@@ -499,7 +499,7 @@ for i,line in enumerate(html):
    strin = "https://github.com/alhom/filpromo17-teesiverkko/"
    if(strin in line):
       #line = line.replace(strin, 'https://github.com/alhom/filpromo17-teesiverkko/'+branch)
-      line ='                <a href="https://github.com/alhom/filpromo17-teesiverkko/'+branch+'"><i class="fa-brands fa-github"></i></a>'
+      line ='                <a href="https://github.com/alhom/filpromo17-teesiverkko/tree/'+branch+'"><i class="fa-brands fa-github"></i></a>'
       line += "<!-- on commit "+sha+" -->\n"
       print(line)
       html[i] = line
