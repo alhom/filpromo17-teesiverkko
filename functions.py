@@ -115,7 +115,7 @@ def getGradus(setname,fromdate='2014-09-14', max = 3, gradut = []):
     # Check which ids we already have loaded.
     readyids = [g.id for g in gradut]
     print(readyids)
-    sickle = Sickle('http://helda.helsinki.fi/oai/request')
+    sickle = Sickle('https://helda.helsinki.fi/server/oai/request')
     with open('iideet_2023.txt','r') as f:
         i = 0
         for line in f:
@@ -157,7 +157,7 @@ def getRecords(setname,fromdate='2014-09-14', untildate='2024-01-01', max = 3, d
 
     # A function for reading the thesis entries from the database
     # fromdate as yyyy-mm-dd
-    sickle = Sickle('http://helda.helsinki.fi/oai/request')
+    sickle = Sickle('https://helda.helsinki.fi/server/oai/request')
     recs = sickle.ListRecords(**{'metadataPrefix': 'oai_dc', 'set':setname, 'from':fromdate, 'until':untildate})
     nrecords = recs.oai_response.raw.count('</header>') # surely there is a better way of counting the records?
     print("Chunks of", nrecords, "available, of total", int(recs.resumption_token.complete_list_size))
@@ -331,7 +331,11 @@ def metaharvester(metadata, thesis=None, verbose=True):
     try: thisthesis.date = str(metadata['date'])[2:-2]
     except: pass
     # Link to the ethesis page
-    try: thisthesis.link = str(metadata['identifier'])[2:-2]
+    #try: thisthesis.link = str(metadata['identifier'])[2:-2]
+    try:      
+      for l in metadata['identifier']:
+         if 'http' in l:
+            thisthesis.link = l
     except: pass
     try: thisthesis.subject = str(metadata['subject'])[1:-1]
     except: pass
