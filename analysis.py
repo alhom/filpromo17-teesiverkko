@@ -24,7 +24,7 @@ import langcodes
 import manual_entries_2023_fil as man_entries
 
 import git
-
+import translation as tr
 
 def langname(l):
    langcodes.Language.get(l).display_name().lower()
@@ -118,20 +118,54 @@ if len(gradut_sus) > 0:
          pass
    sys.exit()
 
+translate_abstracts = True
 langis = {}
 for i,g in enumerate(gradut_all):
    g.global_id = i
+   g.translated_abs = False
    for k in g.abstracts.keys():
+      if type(g.abstracts[k]) is dict:
+         g.abstracts[k] = g.abstracts[k]['translatedText']
       try:
          gradut[k].append(g)
          abslangs[k] = abslangs[k]+1
-         g.langid[k] = langis[k]
          langis[k] += 1
+         g.langid[k] = langis[k]
       except:
          gradut[k] = [g]
          abslangs[k] = 1
          langis[k] = 0
          g.langid[k] = langis[k]
+   if translate_abstracts:
+      if "en" not in g.abstracts.keys():
+         tryorder = ["sv", "fi","se"]
+         enabs = ""
+         for tryl in tryorder:
+            try:
+               enabs = tr.translate_text('en',g.abstracts[tryl],source=tryl)['translatedText']
+            except:
+               pass
+         if enabs == "":
+            res = tr.translate_text('en',g.abstract)
+            enabs = res['translatedText']
+         if enabs != "":
+            print("Translated an abstract for " + g.subject, g.id)
+            try:
+               gradut["en"].append(g)
+               abslangs["en"] = abslangs["en"]+1
+               langis['en'] += 1
+               g.langid['en'] = langis['en']
+               g.abstracts['en'] = enabs
+            except:
+               gradut["en"] = [g]
+               abslangs["en"] = 1
+               langis['en'] = 0
+               g.langid['en'] = langis['en']
+               g.abstracts['en'] = enabs
+            g.translated_abs = True
+
+         
+         
    if(len(g.abstracts.keys())==1):
       l = list(g.abstracts.keys())[0]
       print(g.metadata['identifier'], 'has only single language abstract, ', l)
@@ -139,6 +173,9 @@ for i,g in enumerate(gradut_all):
          singlelans[l] = singlelans[l]+1
       except:
          singlelans[l] = 1
+
+dumpTheses(gradut_all) # dump also translations
+
 
 gdict = {g.global_id: g for g in gradut_all}
 
@@ -352,7 +389,8 @@ for p,g in enumerate(gradut_all):
    # Keep this/these last, lots of text... but ofc it's not sorted
    #G.nodes[i]["abstract"] = fmt_abstracts(g.abstracts)
    for l in g.abstracts.keys():
-      G.nodes[i]["abstract_"+l] = g.abstracts[l]
+      if not(g.translated_abs and l == 'en'):
+         G.nodes[i]["abstract_"+l] = g.abstracts[l]
 
 
 added_nodes = 0 # count nodes after removing non-connected ones
@@ -430,7 +468,7 @@ fig.tight_layout()
 # 100    this is now very vertical
 # 1973   I kind of like this: horizontal, looks like a map, a bit US-ish actually
 
-pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=1973, iterations=1000)  # nearly the same as Gephi Force
+pos = nx.spring_layout(G, k = 1/G.number_of_nodes()**0.5,weight ="weight", seed=2023, iterations=1000)  # nearly the same as Gephi Force
 
 colors = [facultycolors[gdict[g].facultyid] for g in G.nodes]
 lwgts = np.array([G.edges[g]["weight"] for g in G.edges])**0.5
